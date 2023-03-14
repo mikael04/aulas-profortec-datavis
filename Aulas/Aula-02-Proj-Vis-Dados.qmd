@@ -1,0 +1,83 @@
+---
+title: "Untitled"
+author: "Mikael M. Coletto e Maria Yury"
+format: revealjs
+---
+
+## Pilares da visualização de dados
+
+::: incremental
+1.  Entender o contexto
+
+2.  Escolher a visualização mais efetiva
+
+3.  Eliminar distrações
+
+4.  Focar a atenção na mensagem
+
+5.  Trabalhar no design
+
+6.  Contar uma história
+:::
+
+## Entendendo o contexto
+
+::: incremental
+::: columns
+::: {.column width="50%"}
+Exploração
+
+-   Análise inicial
+
+-   Compreensão própria do analista
+
+-   Transforma o dado em ideias e conhecimento
+
+-   Uso próprio do analista dos dados
+:::
+
+::: {.column width="50%"}
+Explicação
+
+-   Entrega de resultado
+
+-   Compreensão dos gestores/público-alvo
+
+-   Leva o conhecimento aprendido de forma fácil e direta
+
+-   Uso geral, focado nos gestores/público-alvo
+:::
+:::
+:::
+
+::: notes
+Aqui vamos ver um conceito básico entre a diferença de duas coisas que parecem próximas e podem ser confundidas, a exploração e a explicação.
+
+Além disso elas tem tudo a ver com entender o contexto que estamos.
+
+Quando queremos entender um dado, podemos experimentar, testar diferentes tipos de análises e visualizações, usar uma variedade de métricas, etc.
+
+Primeiras ideias e intuições sobre os dados, buscando entender aquela base de dados para responder uma pergunta.
+
+E então partimos para a apresentação dos resultados, de forma palatável, fácil entendimento, direta, de forma que cumpra um objetivo, sempre pensando no público alvo que teremos
+:::
+
+## Entendendo o contexto
+
+::: incremental
+-   Quem
+
+-   O que
+
+-   Como
+:::
+
+::: notes
+Quem é o nosso público alvo? o que eles já sabem do nosso problema? Como eles vão usar a informação que daremos? Qual nosso relacionamento com eles?
+
+O que vai ser transmitido, pensar em qual mensagem vamos passar, qual ideia queremos transmitir, um chamado para ação, uma informação nova para um gestor, um entendimento melhor de um problema. Isso define a forma como vamos usar textos e imagens para a apresentação.
+
+E por fim, como usar os dados que temos para transmitir a mensagem que queremos, lembrar da diferença entre exploração e explanação.
+
+Devemos pensar também na forma de apresentação, técnicas como história de 3 minutos ou Big Idea são formas de estruturar.
+:::
