@@ -7,8 +7,40 @@
 /*$h2-font-size:          1.6rem !default;
 $headings-font-weight:  500 !default;
 $body-color:            $gray-700 !default;*/
+$h2-color: #761514;
+$h1-title-color: #761514;
 
 /*-- scss:rules --*/
 .bibliografia{
   font-size: 20px;
+}
+
+/* Posição do "obrigado no slide final"*/
+#obrigado{
+  position: fixed;
+  top: 180px;
+}
+
+/* Capa */
+/* Cor do título (capa) */
+.reveal #title-slide{
+  text-align: left;
+}
+/* Título */
+.reveal h1 {
+  color: $h1-title-color;
+  font-size: 64px;
+}
+
+/* Autores */
+.reveal .quarto-title-authors{
+  color: gray;
+  font-size: 32px;
+  display: inherit !important;
+}
+
+
+/* Títulos dos slides seguintes */
+.reveal section h2 {
+  color: $h2-color;
 }
