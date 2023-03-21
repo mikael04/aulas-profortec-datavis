@@ -3,7 +3,7 @@ title: "Introdução à visualização de dados"
 author: "Mikael M. Coletto e Maria Yury Travassos Ichihara"
 format: 
   pptx:
-    reference-doc: TemplateCidacs.pptx
+    reference-doc: ../template-ppt/TemplateCidacs.pptx
     incremental: true
 ---
 
@@ -72,7 +72,7 @@ E então temos os desafios dos analistas e cientistas de dados (e até mesmo dos
 Informação != de dados, dados são observações colhidas, informações são conclusões e análises que fazemos em cima dos dados.
 :::
 
-## Definições 
+## Definições
 
 ::: incremental
 -   A visualização de dados como representação e apresentação de dados que exploram nossa habilidade de percepção visual com a finalidade de aumentar a compreensão (KIRK, 2012).
@@ -85,7 +85,7 @@ Informação != de dados, dados são observações colhidas, informações são 
 ::: notes
 1: Percepção visual, o nosso sentido mais aguçado e trabalhado desde o início da evolução da espécie humana.
 
-2: Informações abstratas <- tipicamente imagens ou videos, mas também escultura, aplicações web, etc.
+2: Informações abstratas \<- tipicamente imagens ou videos, mas também escultura, aplicações web, etc.
 :::
 
 ## Um exemplo prático
@@ -185,27 +185,41 @@ A visualização deve ser pensada muito bem para se tornar de fácil compreensã
 ## Revisando
 
 ::: incremental
+-   Mercado de trabalho atual
 
-- Mercado de trabalho atual
+-   O que é visualização de dados e suas definições
 
-- O que é visualização de dados e suas definições
+-   Vantagens e desvantagens da visualização
 
-- Vantagens e desvantagens da visualização
+-   Alguns mitos da visualização
 
-- Alguns mitos da visualização
-
-- Norteadores para construção de visualizações
+-   Norteadores para construção de visualizações
 :::
 
 ## Bibliografia
 
-<p class="bibliografia">Knaflic, C. N. **Storytelling com dados: um guia sobre visualização de dados para profissionais de negócios**. 2ª edição. Rio de Janeiro: Alta Books, 2019.</p>
+<p class="bibliografia">
 
-<p class="bibliografia">Kirk, A. **Data Visualization: A Successful Design Process**. Birmingham: Packt Publishing, 2012.</p>
+Knaflic, C. N. **Storytelling com dados: um guia sobre visualização de dados para profissionais de negócios**. 2ª edição. Rio de Janeiro: Alta Books, 2019.
 
-<p class="bibliografia">FRIENDLY, M. .**Milestones in the history of thematic cartography, statistical graphics, and data visualization**.Utah State University. 2008. Disponível em: <https://www.usu.edu/math/symanzik/teaching/2009_stat6560/Downloads/Friendly_milestone.pdf>. Acesso em: 09/03/23.</p>
+</p>
 
-<p class="bibliografia">Few, Stephen. "Data visualization for human perception." The Encyclopedia of Human-Computer Interaction, 2nd Ed. (2013).</p>
+<p class="bibliografia">
 
+Kirk, A. **Data Visualization: A Successful Design Process**. Birmingham: Packt Publishing, 2012.
+
+</p>
+
+<p class="bibliografia">
+
+FRIENDLY, M. .**Milestones in the history of thematic cartography, statistical graphics, and data visualization**.Utah State University. 2008. Disponível em: <https://www.usu.edu/math/symanzik/teaching/2009_stat6560/Downloads/Friendly_milestone.pdf>. Acesso em: 09/03/23.
+
+</p>
+
+<p class="bibliografia">
+
+Few, Stephen. "Data visualization for human perception." The Encyclopedia of Human-Computer Interaction, 2nd Ed. (2013).
+
+</p>
 
 ## Obrigado!

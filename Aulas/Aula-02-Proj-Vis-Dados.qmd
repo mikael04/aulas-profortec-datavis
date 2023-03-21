@@ -1,23 +1,86 @@
 ---
-title: "Untitled"
-author: "Mikael M. Coletto e Maria Yury"
-format: revealjs
+title: "Projeto de Visualização de Dados para análise epidemiológica"
+author: "Mikael M. Coletto e Maria Yury Travassos Ichihara"
+format:
+  pptx:
+    reference-doc: ../template-ppt/TemplateCidacs.pptx
+    incremental: true
 ---
 
-## Pilares da visualização de dados
+## O que vamos trabalhar hoje
 
 ::: incremental
-1.  Entender o contexto
+-   O que é um Projeto de Visualização de Dados epidemiológico
 
-2.  Escolher a visualização mais efetiva
+-   Etapas do Projeto
 
-3.  Eliminar distrações
+-   Etapas de uma Visualização
 
-4.  Focar a atenção na mensagem
+-   Documentação
+:::
 
-5.  Trabalhar no design
+## O que é um Projeto de Visualização de Dados Epidemiológico
 
-6.  Contar uma história
+::: incremental
+-   Assim como qualquer outro projeto, tem começo, meio e fim
+
+-   Identifica um problema
+
+-   Trabalha na solução
+
+-   Entrega um produto
+:::
+
+## Exemplos: IDS
+
+![](../imagens/ids-covid.png)
+
+## Exemplos: AppCoorte100M
+
+![](../imagens/appcoorte-hd.png)
+
+## Introdução do Projeto
+
+::: incremental
+-   Etapa de identificação do problema e revisão bibliográfica
+
+-   Identificar a relevância do problema
+
+-   Descrever a situação do problema e delimitar o escopo
+
+-   Primeiras análises dos dados
+:::
+
+## Objetivo do Projeto
+
+::: incremental
+-   Definição do objetivo
+
+-   Escolha das ferramentas e dados a serem utilizados
+
+- 
+:::
+
+
+
+## Entendendo o contexto
+
+::: incremental
+-   Quem
+
+-   O que
+
+-   Como
+:::
+
+::: notes
+Quem é o nosso público alvo? o que eles já sabem do nosso problema? Como eles vão usar a informação que daremos? Qual nosso relacionamento com eles?
+
+O que vai ser transmitido, pensar em qual mensagem vamos passar, qual ideia queremos transmitir, um chamado para ação, uma informação nova para um gestor, um entendimento melhor de um problema. Isso define a forma como vamos usar textos e imagens para a apresentação.
+
+E por fim, como usar os dados que temos para transmitir a mensagem que queremos, lembrar da diferença entre exploração e explanação.
+
+Devemos pensar também na forma de apresentação, técnicas como história de 3 minutos ou Big Idea são formas de estruturar.
 :::
 
 ## Entendendo o contexto
@@ -62,22 +125,18 @@ Primeiras ideias e intuições sobre os dados, buscando entender aquela base de 
 E então partimos para a apresentação dos resultados, de forma palatável, fácil entendimento, direta, de forma que cumpra um objetivo, sempre pensando no público alvo que teremos
 :::
 
-## Entendendo o contexto
+## Pilares da visualização de dados
 
 ::: incremental
--   Quem
+1.  Entender o contexto
 
--   O que
+2.  Escolher a visualização mais efetiva
 
--   Como
-:::
+3.  Eliminar distrações
 
-::: notes
-Quem é o nosso público alvo? o que eles já sabem do nosso problema? Como eles vão usar a informação que daremos? Qual nosso relacionamento com eles?
+4.  Focar a atenção na mensagem
 
-O que vai ser transmitido, pensar em qual mensagem vamos passar, qual ideia queremos transmitir, um chamado para ação, uma informação nova para um gestor, um entendimento melhor de um problema. Isso define a forma como vamos usar textos e imagens para a apresentação.
+5.  Trabalhar no design
 
-E por fim, como usar os dados que temos para transmitir a mensagem que queremos, lembrar da diferença entre exploração e explanação.
-
-Devemos pensar também na forma de apresentação, técnicas como história de 3 minutos ou Big Idea são formas de estruturar.
+6.  Contar uma história
 :::
