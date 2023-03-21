@@ -1,14 +1,13 @@
 ---
 title: "Introdução à visualização de dados"
-title-slide-attributes:
-  data-background-image: /template-ppt/img0_adj_reveal.png
-author: "Mikael M. Coletto e Maria Yury"
+author: "Mikael M. Coletto e Maria Yury Travassos Ichihara"
 format: 
-  revealjs:
-    theme: "../css/custom.scss"
+  pptx:
+    reference-doc: TemplateCidacs.pptx
+    incremental: true
 ---
 
-## O que vamos trabalhar hoje {background-image=/template-ppt/img1_adj_reveal.png}
+## O que vamos trabalhar hoje
 
 ::: incremental
 -   Contextualização do mercado atual
@@ -29,7 +28,7 @@ format:
 -   E então falaremos dos pilares da visualização de dados
 :::
 
-## Contextualização do mercado atual {background-image=/template-ppt/img1_adj_reveal.png}
+## Contextualização do mercado atual
 
 ::: incremental
 -   "A era dos dados"
@@ -57,7 +56,7 @@ E esse grande volume de dados, que possibilita análises e conclusões cada vez 
 E então temos os desafios dos analistas e cientistas de dados (e até mesmo dos engenheiros), na hora de estruturar esses dados, manipular eles, ter seus primeiros insights, ideias, direções que vão tomar, etc.
 :::
 
-## O que é visualização de dados? {background-image=/template-ppt/img1_adj_reveal.png}
+## O que é visualização de dados?
 
 ::: incremental
 -   Representação gráfica dos dados
@@ -73,7 +72,7 @@ E então temos os desafios dos analistas e cientistas de dados (e até mesmo dos
 Informação != de dados, dados são observações colhidas, informações são conclusões e análises que fazemos em cima dos dados.
 :::
 
-## Definições {background-image=/template-ppt/img1_adj_reveal.png}
+## Definições 
 
 ::: incremental
 -   A visualização de dados como representação e apresentação de dados que exploram nossa habilidade de percepção visual com a finalidade de aumentar a compreensão (KIRK, 2012).
@@ -86,10 +85,10 @@ Informação != de dados, dados são observações colhidas, informações são 
 ::: notes
 1: Percepção visual, o nosso sentido mais aguçado e trabalhado desde o início da evolução da espécie humana.
 
-2: Informações abstratas \<- tipicamente imagens ou videos, mas também escultura, aplicações web, etc.
+2: Informações abstratas <- tipicamente imagens ou videos, mas também escultura, aplicações web, etc.
 :::
 
-## Um exemplo prático {background-image=/template-ppt/img1_adj_reveal.png}
+## Um exemplo prático
 
 ```{r, echo=F, table}
 df_1 <- data.frame(idade = rep("15 à 20"), n_filhos = c(1, 1, 2, 0, 1))
@@ -116,7 +115,7 @@ table <- df |>
 table
 ```
 
-## Um exemplo prático {background-image=/template-ppt/img1_adj_reveal.png}
+## Um exemplo prático
 
 ```{r, echo=F, graph}
 #| column: screen-inset-shaded
@@ -143,7 +142,7 @@ Aqui podemos ver muito mais claramente que a média por si só não é uma boa m
 Apenas olhando as tabelas às vezes podemos ter dificuldade para observar tais fenômenos, nesse caso onde o número de dados era pequeno, ainda é possível, mas se imaginarmos bancos de dados com milhões de linhas, e algumas centenas de colunas, isso se torna impraticável.
 :::
 
-## Mitos de visualização de dados {background-image=/template-ppt/img1_adj_reveal.png}
+## Mitos de visualização de dados
 
 ::: incremental
 -   Uma imagem vale mais que mil palavras
@@ -161,7 +160,7 @@ Em uma das palestras de Alberto Cairo ele cita que 6 entre as 7 notícias mais l
 A visualização deve ser pensada muito bem para se tornar de fácil compreensão, devemos usar anotações se preciso, utilizar as cores de forma que façam sentido, pensar muito bem no gráfico que vai ser apresentado.
 :::
 
-## Alguns norteadores para visualizações {background-image=/template-ppt/img1_adj_reveal.png}
+## Alguns norteadores para visualizações
 
 ::: incremental
 1.  Porque minha visualização existe?
@@ -183,7 +182,22 @@ A visualização deve ser pensada muito bem para se tornar de fácil compreensã
 5.  Nem tudo precisa ser minimalista ou inovador.
 :::
 
-## Bibliografia {background-image=/template-ppt/img1_adj_reveal.png}
+## Revisando
+
+::: incremental
+
+- Mercado de trabalho atual
+
+- O que é visualização de dados e suas definições
+
+- Vantagens e desvantagens da visualização
+
+- Alguns mitos da visualização
+
+- Norteadores para construção de visualizações
+:::
+
+## Bibliografia
 
 <p class="bibliografia">Knaflic, C. N. **Storytelling com dados: um guia sobre visualização de dados para profissionais de negócios**. 2ª edição. Rio de Janeiro: Alta Books, 2019.</p>
 
@@ -194,4 +208,4 @@ A visualização deve ser pensada muito bem para se tornar de fácil compreensã
 <p class="bibliografia">Few, Stephen. "Data visualization for human perception." The Encyclopedia of Human-Computer Interaction, 2nd Ed. (2013).</p>
 
 
-## Obrigado! {background-image=/template-ppt/img2_adj_reveal.png}
+## Obrigado!

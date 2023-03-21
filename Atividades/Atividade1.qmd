@@ -1,0 +1,26 @@
+---
+title: "Atividade 1"
+format: reveal
+---
+
+## Palestra do Alberto Cairo
+
+Primeiramente pedimos que assistam à palestra do professor Alberto Cairo.
+
+Link: https://www.youtube.com/watch?v=uEo1y09y5X4
+
+## Atividade
+
+Julgar os painéis citados pela palestra do professor Alberto Cairo, fazendo um relatório com uma rápida análise de cada um deles, citando objetivos, falando sobre que tipo de gráfico foi utilizado e porquê vocês acham que é uma boa opção, se vocês teriam alguma sugestão de mudança no gráfico, cores, texto, etc.
+
+Os painéis são:\
+Algum dos painéis do: https://pudding.cool/
+
+A aplicação/visualização: https://whydocatsanddogs.com/dogs
+
+Os painéis em português: https://informacoes.anatel.gov.br/paineis/meu-municipio\
+E: https://ids.cidacs.org
+
+Caso queiram adicionar outros, ou substituir um dos citados, fiquem à vontade, pedimos pelo menos quatro análises de visualizações.
+
+A entrega deverá ser feita até a próxima aula, dia 22/05/2023.

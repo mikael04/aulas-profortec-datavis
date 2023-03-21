@@ -5,5 +5,15 @@
   "Aulas/Aula-01-Intro-Vis.qmd": {
     "Aula-01-Intro-Vis.html": "5208a53b",
     "Aula-01-Intro-Vis.pptx": "a838c566"
+  },
+  "Atividade1.qmd": {
+    "Atividade1.tex": "177dffbc"
+  },
+  "Atividades/Atividade1.qmd": {
+    "Atividade1.tex": "aa7bf8ea"
+  },
+  "Aulas/Aula-02-Proj-Vis-Dados.qmd": {
+    "Aula-02-Proj-Vis-Dados.html": "7706c7ab",
+    "Aula-02-Proj-Vis-Dados.pptx": "c8014a37"
   }
 }
