@@ -1,13 +1,14 @@
 ---
 title: "Projeto de Visualização de Dados para análise epidemiológica"
+title-slide-attributes:
+  data-background-image: /template-ppt/img0_adj_reveal.png
 author: "Mikael M. Coletto e Maria Yury Travassos Ichihara"
-format:
-  pptx:
-    reference-doc: ../template-ppt/TemplateCidacs.pptx
-    incremental: true
+format: 
+  revealjs:
+    theme: "../css/custom.scss"
 ---
 
-## O que vamos trabalhar hoje
+## O que vamos trabalhar hoje {background-image=/template-ppt/img1_adj_reveal.png}
 
 ::: incremental
 -   O que é um Projeto de Visualização de Dados epidemiológico
@@ -19,7 +20,7 @@ format:
 -   Documentação
 :::
 
-## O que é um Projeto de Visualização de Dados Epidemiológico
+## O que é um Projeto de Visualização de Dados Epidemiológico {background-image=/template-ppt/img1_adj_reveal.png}
 
 ::: incremental
 -   Assim como qualquer outro projeto, tem começo, meio e fim
@@ -31,15 +32,15 @@ format:
 -   Entrega um produto
 :::
 
-## Exemplos: IDS
+## Exemplos: IDS {background-image=/template-ppt/img1_adj_reveal.png}
 
 ![](../imagens/ids-covid.png)
 
-## Exemplos: AppCoorte100M
+## Exemplos: AppCoorte100M {background-image=/template-ppt/img1_adj_reveal.png}
 
 ![](../imagens/appcoorte-hd.png)
 
-## Introdução do Projeto
+## Introdução do Projeto {background-image=/template-ppt/img1_adj_reveal.png}
 
 ::: incremental
 -   Etapa de identificação do problema e revisão bibliográfica
@@ -51,19 +52,97 @@ format:
 -   Primeiras análises dos dados
 :::
 
-## Objetivo do Projeto
+::: notes
+Na primeira etapa do projeto, partimos para as bases que definirão nosso projeto, primeiro definimos um problema a ser tratado, e investigamos se existem outros produtos, outros projetos, ou outra bibliografia que já tenha tratado do mesmo produto.
+
+Outra questão bastante importante é avaliar a relevância do projeto, é um produto que faz sentido? É um produto que terá utilizada para algum público? Essas questões devem ser muito bem pensadas, para que não percamos tempo e recurso com produtos que, mesmo sendo bem desenvolvidos e atrativos, não tenham um uso que auxilie ou preencha alguma lacuna do mercado.
+
+Descrever a situação também ajuda a entender quais são os pontos que podem e serão atacados, quais são os pontos que não são de tanto interesse e podem ser deixados de lado, fechando o escopo e organizando melhor a solução que será criada.
+
+Além disso, é importante que busquemos pelo menos o mínimo de informações sobre a base de dados que estamos utilizando, seja olhar rapidamente o dicionário, ou uma análise rápida das variáveis de interesse para verificar se é viável a solução do problema definido.
+:::
+
+## Objetivo do Projeto {background-image=/template-ppt/img1_adj_reveal.png}
 
 ::: incremental
 -   Definição do objetivo
-
--   Escolha das ferramentas e dados a serem utilizados
-
-- 
 :::
 
+::: notes
+Pode parecer simples, até por ter colocado apenas um ponto, mas definir o objetivo é o ponto central no produto. Delimitamos o escopo (até onde o projeto vai, o que vai cobrir e o que não vai cobrir) para que não nos percamos no desenvolvimento. Um objetivo bem definido também ajuda na apresentação do produto, ajuda na escolha das ferramentas utilizadas, e permeia todas as etapas de desenvolvimento e entrega do produto.
+:::
 
+## Metodologia {background-image=/template-ppt/img1_adj_reveal.png}
 
-## Entendendo o contexto
+::: incremental
+-   Análise de dados e variáveis
+
+-   Manipulação e preparação da base de dados
+
+-   Estudo e seleção das ferramentas e dados a serem utilizados
+:::
+
+::: notes
+Investigar os dados utilizados, buscar possíveis inconsistências, trabalhar em dados faltantes, limpar dados não utilizados, etc.
+
+Analisar também disponibilidade de variáveis de interesse, passando pelo seu dicionário, olhando amostras de dados, fazendo visualizações iniciais e prototipando o produto.
+
+No estudo da ferramenta, é preciso conhecer as limitações e vantagens de cada ferramenta, e de cada tipo de visualização, é importante começar a fazer protótipos, trazer para a discussão, experimentar com os dados.
+:::
+
+## Desenvolvimento {background-image=/template-ppt/img1_adj_reveal.png}
+
+::: incremental
+-   Análise profunda dos dados
+
+-   Prototipação de soluções
+
+-   Discussão de resultados
+
+-   Ajustes e aprimoramento das soluções
+:::
+
+::: notes
+Na etapa de desenvolvimento, é onde trabalharemos mais a fundo na elaboração do produto, tendo o objetivo e as ferramentas bem definidos, é aplicar os conhecimentos dentro do objetivo, visando a solução do problema. É bastante importante nesta etapa a discussão dos resultados com todos os membros do grupo, para que uma solução apresente o mínimo de viés possível. Além de que, diferentes visões contribuem para um produto final mais completo e robusto.
+
+Se possível, mostrar o produto para pessoas sem conhecimento do projeto para testes e anotar as principais dificuldades, problemas e erros encontrados e corrigir antes da entrega final.
+
+Além disso, é nesta etapa que vamos polir o produto, pensando na experiência do usuário (utilizando o feedback recebido dos usuários de "teste"), aprimoramos também o design para que fique mais atrativo.
+:::
+
+## Apresentação e Conclusão {background-image=/template-ppt/img1_adj_reveal.png}
+
+::: incremental
+-   Entrega e apresentação do produto final
+
+-   Finalização da documentação do projeto
+:::
+
+::: notes
+A entrega e apresentação vai depender do tipo de produto desenvolvido, pode ser uma apresentação de lançamento, pode ser um relatório final, de preferência que elenque os pontos fortes do produto lançado, trazendo como ponto central o objetivo, mas também explorando os desafios enfrentados e as limitações do produto.
+
+Por fim, avaliar os resultados, suas falhas e possíveis pontos a serem melhorados, e relatar de forma que possa servir de consulta para outros produtos/projetos futuros.
+
+A documentação também auxilia na manutenção de produtos que são desenvolvidos e precisam continuar a ser monitorados e melhorados com o tempo, se fazendo uma etapa essencial do desenvolvimento e entrega do projeto.
+:::
+
+## Como elaborar uma visualização {background-image=/template-ppt/img1_adj_reveal.png}
+
+::: incremental
+1.  Entender o contexto
+
+2.  Escolher a visualização mais efetiva
+
+3.  Eliminar distrações
+
+4.  Focar a atenção na mensagem
+
+5.  Trabalhar no design
+
+6.  Contar uma história
+:::
+
+## Entendendo o contexto {background-image=/template-ppt/img1_adj_reveal.png}
 
 ::: incremental
 -   Quem
@@ -83,7 +162,7 @@ E por fim, como usar os dados que temos para transmitir a mensagem que queremos,
 Devemos pensar também na forma de apresentação, técnicas como história de 3 minutos ou Big Idea são formas de estruturar.
 :::
 
-## Entendendo o contexto
+## Entendendo o contexto {background-image=/template-ppt/img1_adj_reveal.png}
 
 ::: incremental
 ::: columns
@@ -125,18 +204,143 @@ Primeiras ideias e intuições sobre os dados, buscando entender aquela base de 
 E então partimos para a apresentação dos resultados, de forma palatável, fácil entendimento, direta, de forma que cumpra um objetivo, sempre pensando no público alvo que teremos
 :::
 
-## Pilares da visualização de dados
+## Escolher a visualização mais efetiva {background-image=/template-ppt/img1_adj_reveal.png}
 
 ::: incremental
-1.  Entender o contexto
-
-2.  Escolher a visualização mais efetiva
-
-3.  Eliminar distrações
-
-4.  Focar a atenção na mensagem
-
-5.  Trabalhar no design
-
-6.  Contar uma história
+-   Tipos mais comuns:
+    -   Texto simples, Tabelas, Mapas de calor
+    -   Gráficos: de pontos, de linhas, de barras e de área
+-   Gráficos a serem evitados:
+    -   Gráficos de pizza e donnuts
+    -   3D
+    -   Segundo eixo
 :::
+
+::: notes
+Texto é uma ótima forma de apresentar apenas um ou dois números e compará-los. Ou quando queremos dar destaque à uma informação.
+
+Tabelas podem ser usadas com cautela por chamarem muita atenção do público, e se usá-las, usar de forma mais limpa. Mapas de calor podem ser usados em conjunto com as tabelas, ou em algum tipo de gráfico, para dar destaque à alguns dados, a utilização de cor ajuda a agrupar ou separar os dados, mas é preciso tomar cuidado com as tonalidades.
+
+Gráficos a serem evitados:
+
+De pizza e donnuts -\> Nós temos dificuldade para calcular proporções e ângulos, o que dificulta bastante a comparação entre as categorias. Além do mais, quando temos muitas categorias com pouca proporção, é difícil olhar todas elas no gráfico.
+
+3D -\> Similar aos gráficos de pizza, também temos dificuldade em calcular profundidade, podemos inclusive ter uma falsa impressão de tamanho por causa do efeito de profundidade.
+
+Segundo eixo -\> Dificuldade em ter uma linha base, dificulta a leitura do gráfico como um todo
+:::
+
+## Gráfico de pontos  {background-image=/template-ppt/img1_adj_reveal.png}
+
+![](../imagens/graph-points.png)
+
+## Gráfico de linhas {background-image=/template-ppt/img1_adj_reveal.png}
+
+![](../imagens/graph-line-compare.png)
+
+
+## Gráfico de área {background-image=/template-ppt/img1_adj_reveal.png}
+
+![](../imagens/graph-area-compare.png)
+
+## Elimininando distrações {background-image=/template-ppt/img1_adj_reveal.png}
+
+::: incremental
+-   Carga cognitiva
+
+-   Distrações
+
+-   Princípios de percepção visual
+
+-   Falta de organização
+:::
+
+::: notes
+Carga cognitiva -\> Informação que cada elemento da nossa apresentação gera.
+
+Distrações -\> Elementos que não contribuem para a compreensão da mensagem
+
+Princípios de percepção:
+- Proximidade
+- Similaridade
+- Borda/fundo
+- Fechamento
+- Continuidade
+- Conexão
+
+Falta de organização -\> Alinhamento e espaços em brancos
+:::
+
+## Eliminando distrações e refazendo um gráfico {background-image=/template-ppt/img1_adj_reveal.png}
+
+![](../imagens/graph-remake-bef.jpg)
+
+
+## Eliminando distrações e refazendo um gráfico {background-image=/template-ppt/img1_adj_reveal.png}
+
+![](../imagens/graph-remake-aft.jpeg)
+
+## Atenção e foco
+
+::: incremental
+-   Uso de atributos pré-atencionais
+
+-   Uso de elementos em texto
+:::
+
+::: notes
+Atributos pré-atencionais (imagem)
+Elementos em texto -\> negrito, cor, itálico, tamanho, espaço, encapsulamento e sublinhado.
+:::
+
+
+## Atributos pré-atencionais {background-image=/template-ppt/img1_adj_reveal.png}
+
+![](../imagens/preemptive-atributes.png)
+
+## Pense como um designer {background-image=/template-ppt/img1_adj_reveal.png}
+
+::: incremental
+-   Forma e propósito
+
+-   Acessibilidade
+
+-   Estética
+:::
+
+::: notes
+Forma e propósito -\> Eliminar distração, evidênciar o que é importante. Também é interessante criar uma hierarquia da informação.
+
+Acessibilidade -\> Facilitar compreensão, usar textos, pensar em diferentes tipos de público
+
+Estética -\> Uso de cores com sabedoria, alinhamentos, aproveitar espaço em branco.
+
+:::
+
+
+## Conte uma história {background-image=/template-ppt/img1_adj_reveal.png}
+
+::: incremental
+-   Diferentes formas de apresentação
+
+-   Usar estruturas para narrativa
+
+-   Pensar no tipo de apresentação a ser feita
+:::
+
+::: notes
+Início, meio e fim
+
+Utilizar repetição
+
+Táticas para contar história (lógica horizontal, vertical, storyboard reverso)
+:::
+
+
+## Fontes/Bibliografia {background-image=/template-ppt/img1_adj_reveal.png}
+
+-   https://www.storytellingwithdata.com/chart-guide
+
+-   Knaflic, C.N. Storytelling com dados:um guia sobre visualização de dados para profissionais de negócios. 2ª edição. Rio de Janeiro: Alta Books, 2019.
+
+## Obrigado! {background-image=/template-ppt/img2_adj_reveal.png}

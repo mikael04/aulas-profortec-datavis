@@ -1,6 +1,6 @@
 ---
 title: "Atividade 1"
-format: reveal
+format: revealjs
 ---
 
 ## Palestra do Alberto Cairo

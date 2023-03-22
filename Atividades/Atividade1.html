@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="Aula-02-Proj-Vis-Dados_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Aula-02-Proj-Vis-Dados_files/libs/quarto-html/tabby.min.js"></script>
-<script src="Aula-02-Proj-Vis-Dados_files/libs/quarto-html/popper.min.js"></script>
-<script src="Aula-02-Proj-Vis-Dados_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="Aula-02-Proj-Vis-Dados_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Aula-02-Proj-Vis-Dados_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="Aula-02-Proj-Vis-Dados_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="Atividade1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Atividade1_files/libs/quarto-html/tabby.min.js"></script>
+<script src="Atividade1_files/libs/quarto-html/popper.min.js"></script>
+<script src="Atividade1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="Atividade1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Atividade1_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="Atividade1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.335">
 
-  <meta name="author" content="Mikael M. Coletto e Maria Yury Travassos Ichihara">
-  <title>Projeto de Visualização de Dados para análise epidemiológica</title>
+  <title>Atividade 1</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="Aula-02-Proj-Vis-Dados_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="Aula-02-Proj-Vis-Dados_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="Atividade1_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="Atividade1_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,11 +28,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="Aula-02-Proj-Vis-Dados_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-  <link href="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="Atividade1_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link href="Atividade1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="Atividade1_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="Atividade1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Atividade1_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -323,419 +322,28 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="/template-ppt/img0_adj_reveal.png" class="quarto-title-block center">
-  <h1 class="title">Projeto de Visualização de Dados para análise epidemiológica</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Atividade 1</h1>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Mikael M. Coletto e Maria Yury Travassos Ichihara 
-</div>
-</div>
 </div>
 
 </section>
-<section id="o-que-vamos-trabalhar-hoje" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>O que vamos trabalhar hoje</h2>
-<div>
-<ul>
-<li class="fragment"><p>O que é um Projeto de Visualização de Dados epidemiológico</p></li>
-<li class="fragment"><p>Etapas do Projeto</p></li>
-<li class="fragment"><p>Etapas de uma Visualização</p></li>
-<li class="fragment"><p>Documentação</p></li>
-</ul>
-</div>
+<section id="palestra-do-alberto-cairo" class="slide level2">
+<h2>Palestra do Alberto Cairo</h2>
+<p>Primeiramente pedimos que assistam à palestra do professor Alberto Cairo.</p>
+<p>Link: https://www.youtube.com/watch?v=uEo1y09y5X4</p>
 </section>
-<section id="o-que-é-um-projeto-de-visualização-de-dados-epidemiológico" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>O que é um Projeto de Visualização de Dados Epidemiológico</h2>
-<div>
-<ul>
-<li class="fragment"><p>Assim como qualquer outro projeto, tem começo, meio e fim</p></li>
-<li class="fragment"><p>Identifica um problema</p></li>
-<li class="fragment"><p>Trabalha na solução</p></li>
-<li class="fragment"><p>Entrega um produto</p></li>
-</ul>
-</div>
-</section>
-<section id="exemplos-ids" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Exemplos: IDS</h2>
-
-<img data-src="../imagens/ids-covid.png" class="r-stretch"></section>
-<section id="exemplos-appcoorte100m" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Exemplos: AppCoorte100M</h2>
-
-<img data-src="../imagens/appcoorte-hd.png" class="r-stretch"></section>
-<section id="introdução-do-projeto" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Introdução do Projeto</h2>
-<div>
-<ul>
-<li class="fragment"><p>Etapa de identificação do problema e revisão bibliográfica</p></li>
-<li class="fragment"><p>Identificar a relevância do problema</p></li>
-<li class="fragment"><p>Descrever a situação do problema e delimitar o escopo</p></li>
-<li class="fragment"><p>Primeiras análises dos dados</p></li>
-</ul>
-</div>
-<aside class="notes">
-<p>Na primeira etapa do projeto, partimos para as bases que definirão nosso projeto, primeiro definimos um problema a ser tratado, e investigamos se existem outros produtos, outros projetos, ou outra bibliografia que já tenha tratado do mesmo produto.</p>
-<p>Outra questão bastante importante é avaliar a relevância do projeto, é um produto que faz sentido? É um produto que terá utilizada para algum público? Essas questões devem ser muito bem pensadas, para que não percamos tempo e recurso com produtos que, mesmo sendo bem desenvolvidos e atrativos, não tenham um uso que auxilie ou preencha alguma lacuna do mercado.</p>
-<p>Descrever a situação também ajuda a entender quais são os pontos que podem e serão atacados, quais são os pontos que não são de tanto interesse e podem ser deixados de lado, fechando o escopo e organizando melhor a solução que será criada.</p>
-<p>Além disso, é importante que busquemos pelo menos o mínimo de informações sobre a base de dados que estamos utilizando, seja olhar rapidamente o dicionário, ou uma análise rápida das variáveis de interesse para verificar se é viável a solução do problema definido.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="objetivo-do-projeto" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Objetivo do Projeto</h2>
-<div>
-<ul>
-<li class="fragment">Definição do objetivo</li>
-</ul>
-</div>
-<aside class="notes">
-<p>Pode parecer simples, até por ter colocado apenas um ponto, mas definir o objetivo é o ponto central no produto. Delimitamos o escopo (até onde o projeto vai, o que vai cobrir e o que não vai cobrir) para que não nos percamos no desenvolvimento. Um objetivo bem definido também ajuda na apresentação do produto, ajuda na escolha das ferramentas utilizadas, e permeia todas as etapas de desenvolvimento e entrega do produto.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="metodologia" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Metodologia</h2>
-<div>
-<ul>
-<li class="fragment"><p>Análise de dados e variáveis</p></li>
-<li class="fragment"><p>Manipulação e preparação da base de dados</p></li>
-<li class="fragment"><p>Estudo e seleção das ferramentas e dados a serem utilizados</p></li>
-</ul>
-</div>
-<aside class="notes">
-<p>Investigar os dados utilizados, buscar possíveis inconsistências, trabalhar em dados faltantes, limpar dados não utilizados, etc.</p>
-<p>Analisar também disponibilidade de variáveis de interesse, passando pelo seu dicionário, olhando amostras de dados, fazendo visualizações iniciais e prototipando o produto.</p>
-<p>No estudo da ferramenta, é preciso conhecer as limitações e vantagens de cada ferramenta, e de cada tipo de visualização, é importante começar a fazer protótipos, trazer para a discussão, experimentar com os dados.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="desenvolvimento" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Desenvolvimento</h2>
-<div>
-<ul>
-<li class="fragment"><p>Análise profunda dos dados</p></li>
-<li class="fragment"><p>Prototipação de soluções</p></li>
-<li class="fragment"><p>Discussão de resultados</p></li>
-<li class="fragment"><p>Ajustes e aprimoramento das soluções</p></li>
-</ul>
-</div>
-<aside class="notes">
-<p>Na etapa de desenvolvimento, é onde trabalharemos mais a fundo na elaboração do produto, tendo o objetivo e as ferramentas bem definidos, é aplicar os conhecimentos dentro do objetivo, visando a solução do problema. É bastante importante nesta etapa a discussão dos resultados com todos os membros do grupo, para que uma solução apresente o mínimo de viés possível. Além de que, diferentes visões contribuem para um produto final mais completo e robusto.</p>
-<p>Se possível, mostrar o produto para pessoas sem conhecimento do projeto para testes e anotar as principais dificuldades, problemas e erros encontrados e corrigir antes da entrega final.</p>
-<p>Além disso, é nesta etapa que vamos polir o produto, pensando na experiência do usuário (utilizando o feedback recebido dos usuários de “teste”), aprimoramos também o design para que fique mais atrativo.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="apresentação-e-conclusão" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Apresentação e Conclusão</h2>
-<div>
-<ul>
-<li class="fragment"><p>Entrega e apresentação do produto final</p></li>
-<li class="fragment"><p>Finalização da documentação do projeto</p></li>
-</ul>
-</div>
-<aside class="notes">
-<p>A entrega e apresentação vai depender do tipo de produto desenvolvido, pode ser uma apresentação de lançamento, pode ser um relatório final, de preferência que elenque os pontos fortes do produto lançado, trazendo como ponto central o objetivo, mas também explorando os desafios enfrentados e as limitações do produto.</p>
-<p>Por fim, avaliar os resultados, suas falhas e possíveis pontos a serem melhorados, e relatar de forma que possa servir de consulta para outros produtos/projetos futuros.</p>
-<p>A documentação também auxilia na manutenção de produtos que são desenvolvidos e precisam continuar a ser monitorados e melhorados com o tempo, se fazendo uma etapa essencial do desenvolvimento e entrega do projeto.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="como-elaborar-uma-visualização" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Como elaborar uma visualização</h2>
-<div>
-<ol type="1">
-<li class="fragment"><p>Entender o contexto</p></li>
-<li class="fragment"><p>Escolher a visualização mais efetiva</p></li>
-<li class="fragment"><p>Eliminar distrações</p></li>
-<li class="fragment"><p>Focar a atenção na mensagem</p></li>
-<li class="fragment"><p>Trabalhar no design</p></li>
-<li class="fragment"><p>Contar uma história</p></li>
-</ol>
-</div>
-</section>
-<section id="entendendo-o-contexto" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Entendendo o contexto</h2>
-<div>
-<ul>
-<li class="fragment"><p>Quem</p></li>
-<li class="fragment"><p>O que</p></li>
-<li class="fragment"><p>Como</p></li>
-</ul>
-</div>
-<aside class="notes">
-<p>Quem é o nosso público alvo? o que eles já sabem do nosso problema? Como eles vão usar a informação que daremos? Qual nosso relacionamento com eles?</p>
-<p>O que vai ser transmitido, pensar em qual mensagem vamos passar, qual ideia queremos transmitir, um chamado para ação, uma informação nova para um gestor, um entendimento melhor de um problema. Isso define a forma como vamos usar textos e imagens para a apresentação.</p>
-<p>E por fim, como usar os dados que temos para transmitir a mensagem que queremos, lembrar da diferença entre exploração e explanação.</p>
-<p>Devemos pensar também na forma de apresentação, técnicas como história de 3 minutos ou Big Idea são formas de estruturar.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="entendendo-o-contexto-1" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Entendendo o contexto</h2>
-<div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Exploração</p>
-<ul>
-<li class="fragment"><p>Análise inicial</p></li>
-<li class="fragment"><p>Compreensão própria do analista</p></li>
-<li class="fragment"><p>Transforma o dado em ideias e conhecimento</p></li>
-<li class="fragment"><p>Uso próprio do analista dos dados</p></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p>Explicação</p>
-<ul>
-<li class="fragment"><p>Entrega de resultado</p></li>
-<li class="fragment"><p>Compreensão dos gestores/público-alvo</p></li>
-<li class="fragment"><p>Leva o conhecimento aprendido de forma fácil e direta</p></li>
-<li class="fragment"><p>Uso geral, focado nos gestores/público-alvo</p></li>
-</ul>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Aqui vamos ver um conceito básico entre a diferença de duas coisas que parecem próximas e podem ser confundidas, a exploração e a explicação.</p>
-<p>Além disso elas tem tudo a ver com entender o contexto que estamos.</p>
-<p>Quando queremos entender um dado, podemos experimentar, testar diferentes tipos de análises e visualizações, usar uma variedade de métricas, etc.</p>
-<p>Primeiras ideias e intuições sobre os dados, buscando entender aquela base de dados para responder uma pergunta.</p>
-<p>E então partimos para a apresentação dos resultados, de forma palatável, fácil entendimento, direta, de forma que cumpra um objetivo, sempre pensando no público alvo que teremos</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="escolher-a-visualização-mais-efetiva" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Escolher a visualização mais efetiva</h2>
-<div>
-<ul>
-<li class="fragment">Tipos mais comuns:
-<ul>
-<li class="fragment">Texto simples, Tabelas, Mapas de calor</li>
-<li class="fragment">Gráficos: de pontos, de linhas, de barras e de área</li>
-</ul></li>
-<li class="fragment">Gráficos a serem evitados:
-<ul>
-<li class="fragment">Gráficos de pizza e donnuts</li>
-<li class="fragment">3D</li>
-<li class="fragment">Segundo eixo</li>
-</ul></li>
-</ul>
-</div>
-<aside class="notes">
-<p>Texto é uma ótima forma de apresentar apenas um ou dois números e compará-los. Ou quando queremos dar destaque à uma informação.</p>
-<p>Tabelas podem ser usadas com cautela por chamarem muita atenção do público, e se usá-las, usar de forma mais limpa. Mapas de calor podem ser usados em conjunto com as tabelas, ou em algum tipo de gráfico, para dar destaque à alguns dados, a utilização de cor ajuda a agrupar ou separar os dados, mas é preciso tomar cuidado com as tonalidades.</p>
-<p>Gráficos a serem evitados:</p>
-<p>De pizza e donnuts -&gt; Nós temos dificuldade para calcular proporções e ângulos, o que dificulta bastante a comparação entre as categorias. Além do mais, quando temos muitas categorias com pouca proporção, é difícil olhar todas elas no gráfico.</p>
-<p>3D -&gt; Similar aos gráficos de pizza, também temos dificuldade em calcular profundidade, podemos inclusive ter uma falsa impressão de tamanho por causa do efeito de profundidade.</p>
-<p>Segundo eixo -&gt; Dificuldade em ter uma linha base, dificulta a leitura do gráfico como um todo</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="gráfico-de-pontos" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Gráfico de pontos</h2>
-
-<img data-src="../imagens/graph-points.png" class="r-stretch"></section>
-<section id="gráfico-de-linhas" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Gráfico de linhas</h2>
-
-<img data-src="../imagens/graph-line-compare.png" class="r-stretch"></section>
-<section id="gráfico-de-área" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Gráfico de área</h2>
-
-<img data-src="../imagens/graph-area-compare.png" class="r-stretch"></section>
-<section id="elimininando-distrações" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Elimininando distrações</h2>
-<div>
-<ul>
-<li class="fragment"><p>Carga cognitiva</p></li>
-<li class="fragment"><p>Distrações</p></li>
-<li class="fragment"><p>Princípios de percepção visual</p></li>
-<li class="fragment"><p>Falta de organização</p></li>
-</ul>
-</div>
-<aside class="notes">
-<p>Carga cognitiva -&gt; Informação que cada elemento da nossa apresentação gera.</p>
-<p>Distrações -&gt; Elementos que não contribuem para a compreensão da mensagem</p>
-<p>Princípios de percepção: - Proximidade - Similaridade - Borda/fundo - Fechamento - Continuidade - Conexão</p>
-<p>Falta de organização -&gt; Alinhamento e espaços em brancos</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="eliminando-distrações-e-refazendo-um-gráfico" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Eliminando distrações e refazendo um gráfico</h2>
-
-<img data-src="../imagens/graph-remake-bef.jpg" class="r-stretch"></section>
-<section id="eliminando-distrações-e-refazendo-um-gráfico-1" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Eliminando distrações e refazendo um gráfico</h2>
-
-<img data-src="../imagens/graph-remake-aft.jpeg" class="r-stretch"></section>
-<section id="atenção-e-foco" class="slide level2">
-<h2>Atenção e foco</h2>
-<div>
-<ul>
-<li class="fragment"><p>Uso de atributos pré-atencionais</p></li>
-<li class="fragment"><p>Uso de elementos em texto</p></li>
-</ul>
-</div>
-<aside class="notes">
-<p>Atributos pré-atencionais (imagem) Elementos em texto -&gt; negrito, cor, itálico, tamanho, espaço, encapsulamento e sublinhado.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="atributos-pré-atencionais" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Atributos pré-atencionais</h2>
-
-<img data-src="../imagens/preemptive-atributes.png" class="r-stretch"></section>
-<section id="pense-como-um-designer" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Pense como um designer</h2>
-<div>
-<ul>
-<li class="fragment"><p>Forma e propósito</p></li>
-<li class="fragment"><p>Acessibilidade</p></li>
-<li class="fragment"><p>Estética</p></li>
-</ul>
-</div>
-<aside class="notes">
-<p>Forma e propósito -&gt; Eliminar distração, evidênciar o que é importante. Também é interessante criar uma hierarquia da informação.</p>
-<p>Acessibilidade -&gt; Facilitar compreensão, usar textos, pensar em diferentes tipos de público</p>
-<p>Estética -&gt; Uso de cores com sabedoria, alinhamentos, aproveitar espaço em branco.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="conte-uma-história" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Conte uma história</h2>
-<div>
-<ul>
-<li class="fragment"><p>Diferentes formas de apresentação</p></li>
-<li class="fragment"><p>Usar estruturas para narrativa</p></li>
-<li class="fragment"><p>Pensar no tipo de apresentação a ser feita</p></li>
-</ul>
-</div>
-<aside class="notes">
-<p>Início, meio e fim</p>
-<p>Utilizar repetição</p>
-<p>Táticas para contar história (lógica horizontal, vertical, storyboard reverso)</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="fontesbibliografia" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
-<h2>Fontes/Bibliografia</h2>
-<ul>
-<li><p>https://www.storytellingwithdata.com/chart-guide</p></li>
-<li><p>Knaflic, C.N. Storytelling com dados:um guia sobre visualização de dados para profissionais de negócios. 2ª edição. Rio de Janeiro: Alta Books, 2019.</p></li>
-</ul>
-</section>
-<section id="obrigado" class="slide level2" data-background-image="/template-ppt/img2_adj_reveal.png">
-<h2>Obrigado!</h2>
+<section id="atividade" class="slide level2">
+<h2>Atividade</h2>
+<p>Julgar os painéis citados pela palestra do professor Alberto Cairo, fazendo um relatório com uma rápida análise de cada um deles, citando objetivos, falando sobre que tipo de gráfico foi utilizado e porquê vocês acham que é uma boa opção, se vocês teriam alguma sugestão de mudança no gráfico, cores, texto, etc.</p>
+<p>Os painéis são:<br>
+Algum dos painéis do: https://pudding.cool/</p>
+<p>A aplicação/visualização: https://whydocatsanddogs.com/dogs</p>
+<p>Os painéis em português: https://informacoes.anatel.gov.br/paineis/meu-municipio<br>
+E: https://ids.cidacs.org</p>
+<p>Caso queiram adicionar outros, ou substituir um dos citados, fiquem à vontade, pedimos pelo menos quatro análises de visualizações.</p>
+<p>A entrega deverá ser feita até a próxima aula, dia 22/05/2023.</p>
 <div class="footer footer-default">
 
 </div>
@@ -744,19 +352,19 @@ Mikael M. Coletto e Maria Yury Travassos Ichihara
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="Aula-02-Proj-Vis-Dados_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="Atividade1_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="Atividade1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="Atividade1_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="Atividade1_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="Atividade1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Atividade1_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="Aula-02-Proj-Vis-Dados_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="Atividade1_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="Atividade1_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="Atividade1_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="Atividade1_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
