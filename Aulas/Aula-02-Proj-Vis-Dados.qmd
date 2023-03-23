@@ -1,14 +1,13 @@
 ---
 title: "Projeto de Visualização de Dados para análise epidemiológica"
-title-slide-attributes:
-  data-background-image: /template-ppt/img0_adj_reveal.png
 author: "Mikael M. Coletto e Maria Yury Travassos Ichihara"
 format: 
-  revealjs:
-    theme: "../css/custom.scss"
+  pptx:
+    reference-doc: ../template-ppt/TemplateCidacs.pptx
+    incremental: true
 ---
 
-## O que vamos trabalhar hoje {background-image=/template-ppt/img1_adj_reveal.png}
+## O que vamos trabalhar hoje
 
 ::: incremental
 -   O que é um Projeto de Visualização de Dados epidemiológico
@@ -20,7 +19,7 @@ format:
 -   Documentação
 :::
 
-## O que é um Projeto de Visualização de Dados Epidemiológico {background-image=/template-ppt/img1_adj_reveal.png}
+## O que é um Projeto de Visualização de Dados Epidemiológico
 
 ::: incremental
 -   Assim como qualquer outro projeto, tem começo, meio e fim
@@ -32,15 +31,15 @@ format:
 -   Entrega um produto
 :::
 
-## Exemplos: IDS {background-image=/template-ppt/img1_adj_reveal.png}
+## Exemplos: IDS
 
 ![](../imagens/ids-covid.png)
 
-## Exemplos: AppCoorte100M {background-image=/template-ppt/img1_adj_reveal.png}
+## Exemplos: AppCoorte100M
 
 ![](../imagens/appcoorte-hd.png)
 
-## Introdução do Projeto {background-image=/template-ppt/img1_adj_reveal.png}
+## Introdução do Projeto
 
 ::: incremental
 -   Etapa de identificação do problema e revisão bibliográfica
@@ -62,7 +61,7 @@ Descrever a situação também ajuda a entender quais são os pontos que podem e
 Além disso, é importante que busquemos pelo menos o mínimo de informações sobre a base de dados que estamos utilizando, seja olhar rapidamente o dicionário, ou uma análise rápida das variáveis de interesse para verificar se é viável a solução do problema definido.
 :::
 
-## Objetivo do Projeto {background-image=/template-ppt/img1_adj_reveal.png}
+## Objetivo do Projeto
 
 ::: incremental
 -   Definição do objetivo
@@ -72,7 +71,7 @@ Além disso, é importante que busquemos pelo menos o mínimo de informações s
 Pode parecer simples, até por ter colocado apenas um ponto, mas definir o objetivo é o ponto central no produto. Delimitamos o escopo (até onde o projeto vai, o que vai cobrir e o que não vai cobrir) para que não nos percamos no desenvolvimento. Um objetivo bem definido também ajuda na apresentação do produto, ajuda na escolha das ferramentas utilizadas, e permeia todas as etapas de desenvolvimento e entrega do produto.
 :::
 
-## Metodologia {background-image=/template-ppt/img1_adj_reveal.png}
+## Metodologia
 
 ::: incremental
 -   Análise de dados e variáveis
@@ -90,7 +89,7 @@ Analisar também disponibilidade de variáveis de interesse, passando pelo seu d
 No estudo da ferramenta, é preciso conhecer as limitações e vantagens de cada ferramenta, e de cada tipo de visualização, é importante começar a fazer protótipos, trazer para a discussão, experimentar com os dados.
 :::
 
-## Desenvolvimento {background-image=/template-ppt/img1_adj_reveal.png}
+## Desenvolvimento
 
 ::: incremental
 -   Análise profunda dos dados
@@ -110,7 +109,7 @@ Se possível, mostrar o produto para pessoas sem conhecimento do projeto para te
 Além disso, é nesta etapa que vamos polir o produto, pensando na experiência do usuário (utilizando o feedback recebido dos usuários de "teste"), aprimoramos também o design para que fique mais atrativo.
 :::
 
-## Apresentação e Conclusão {background-image=/template-ppt/img1_adj_reveal.png}
+## Apresentação e Conclusão
 
 ::: incremental
 -   Entrega e apresentação do produto final
@@ -126,7 +125,7 @@ Por fim, avaliar os resultados, suas falhas e possíveis pontos a serem melhorad
 A documentação também auxilia na manutenção de produtos que são desenvolvidos e precisam continuar a ser monitorados e melhorados com o tempo, se fazendo uma etapa essencial do desenvolvimento e entrega do projeto.
 :::
 
-## Como elaborar uma visualização {background-image=/template-ppt/img1_adj_reveal.png}
+## Como elaborar uma visualização
 
 ::: incremental
 1.  Entender o contexto
@@ -142,7 +141,7 @@ A documentação também auxilia na manutenção de produtos que são desenvolvi
 6.  Contar uma história
 :::
 
-## Entendendo o contexto {background-image=/template-ppt/img1_adj_reveal.png}
+## Entendendo o contexto
 
 ::: incremental
 -   Quem
@@ -162,7 +161,7 @@ E por fim, como usar os dados que temos para transmitir a mensagem que queremos,
 Devemos pensar também na forma de apresentação, técnicas como história de 3 minutos ou Big Idea são formas de estruturar.
 :::
 
-## Entendendo o contexto {background-image=/template-ppt/img1_adj_reveal.png}
+## Entendendo o contexto
 
 ::: incremental
 ::: columns
@@ -204,7 +203,7 @@ Primeiras ideias e intuições sobre os dados, buscando entender aquela base de 
 E então partimos para a apresentação dos resultados, de forma palatável, fácil entendimento, direta, de forma que cumpra um objetivo, sempre pensando no público alvo que teremos
 :::
 
-## Escolher a visualização mais efetiva {background-image=/template-ppt/img1_adj_reveal.png}
+## Escolher a visualização mais efetiva
 
 ::: incremental
 -   Tipos mais comuns:
@@ -230,20 +229,20 @@ De pizza e donnuts -\> Nós temos dificuldade para calcular proporções e ângu
 Segundo eixo -\> Dificuldade em ter uma linha base, dificulta a leitura do gráfico como um todo
 :::
 
-## Gráfico de pontos  {background-image=/template-ppt/img1_adj_reveal.png}
+## Gráfico de pontos 
 
 ![](../imagens/graph-points.png)
 
-## Gráfico de linhas {background-image=/template-ppt/img1_adj_reveal.png}
+## Gráfico de linhas
 
 ![](../imagens/graph-line-compare.png)
 
 
-## Gráfico de área {background-image=/template-ppt/img1_adj_reveal.png}
+## Gráfico de área
 
 ![](../imagens/graph-area-compare.png)
 
-## Elimininando distrações {background-image=/template-ppt/img1_adj_reveal.png}
+## Elimininando distrações
 
 ::: incremental
 -   Carga cognitiva
@@ -271,12 +270,12 @@ Princípios de percepção:
 Falta de organização -\> Alinhamento e espaços em brancos
 :::
 
-## Eliminando distrações e refazendo um gráfico {background-image=/template-ppt/img1_adj_reveal.png}
+## Eliminando distrações e refazendo um gráfico
 
 ![](../imagens/graph-remake-bef.jpg)
 
 
-## Eliminando distrações e refazendo um gráfico {background-image=/template-ppt/img1_adj_reveal.png}
+## Eliminando distrações e refazendo um gráfico
 
 ![](../imagens/graph-remake-aft.jpeg)
 
@@ -294,11 +293,11 @@ Elementos em texto -\> negrito, cor, itálico, tamanho, espaço, encapsulamento 
 :::
 
 
-## Atributos pré-atencionais {background-image=/template-ppt/img1_adj_reveal.png}
+## Atributos pré-atencionais
 
 ![](../imagens/preemptive-atributes.png)
 
-## Pense como um designer {background-image=/template-ppt/img1_adj_reveal.png}
+## Pense como um designer
 
 ::: incremental
 -   Forma e propósito
@@ -318,7 +317,7 @@ Estética -\> Uso de cores com sabedoria, alinhamentos, aproveitar espaço em br
 :::
 
 
-## Conte uma história {background-image=/template-ppt/img1_adj_reveal.png}
+## Conte uma história
 
 ::: incremental
 -   Diferentes formas de apresentação
@@ -337,10 +336,10 @@ Táticas para contar história (lógica horizontal, vertical, storyboard reverso
 :::
 
 
-## Fontes/Bibliografia {background-image=/template-ppt/img1_adj_reveal.png}
+## Fontes/Bibliografia
 
 -   https://www.storytellingwithdata.com/chart-guide
 
 -   Knaflic, C.N. Storytelling com dados:um guia sobre visualização de dados para profissionais de negócios. 2ª edição. Rio de Janeiro: Alta Books, 2019.
 
-## Obrigado! {background-image=/template-ppt/img2_adj_reveal.png}
+## Obrigado!
