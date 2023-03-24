@@ -1,0 +1,18 @@
+---
+title: "Atividade 2"
+format: revealjs
+---
+
+## Atividade
+
+Entregar as primeiras etapas de planejamento do projeto que vocês farão ao longo do módulo de análise e visualização. As etapas consistem em:
+
+-   Introdução: Definição do problema, motivação e revisão bibliográfica.
+
+-   Objetivos: Definindo o escopo do projeto e o público alvo.
+
+-   Proposta de seleção das variáveis do sinasc, a partir da revisão bibliográfica e dicionário (e, se as alunas quiserem, a própria base de dados).
+
+## **Entrega**
+
+A entrega deverá ser feita até a próxima aula, dia 29/05/2023.

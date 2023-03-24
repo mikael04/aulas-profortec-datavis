@@ -1,0 +1,36 @@
+---
+title: "Análise e estruturação de dados em R"
+author: "Mikael M. Coletto e Maria Yury Travassos Ichihara"
+theme: cerulean
+lang: pt
+---
+
+## O que vamos trabalhar hoje
+
+-   Análise inicial da base de dados
+
+-   Estruturação da base de dados
+
+### Lendo a base de dados
+
+```{r, read-data}
+## Caminho relativo
+path_quarto <- "../"
+## Caminho do arquivo de dados
+df_sinasc <- read.csv(paste0(path_quarto, "dados/dados.csv"))
+# library(data.table)
+# df_sinasc <- fread(paste0(path_quarto, "dados/dados.csv"))
+
+## Verificando nome de colunas
+colnames(df_sinasc)
+
+## Verificando o tipo de uma coluna
+typeof(df_sinasc$contador)
+
+## Investigando valores da variável "contador"
+dplyr::n_distinct(df_sinasc$contador)
+
+## Verificando se o identificador é único, ou seja, para cada observação existe
+## um valor para a variável "contador" na base de dados
+dplyr::n_distinct(df_sinasc$contador) == nrow(df_sinasc)
+```
