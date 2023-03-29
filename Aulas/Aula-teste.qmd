@@ -1,0 +1,26 @@
+---
+title: "Quarto HTML Basics"
+author: "Norah Jones"
+date: "03-28-2023"
+toc: true
+format:
+  html:
+    code-tools: true
+    self-contained: true
+execute:
+  warning: false
+lang: pt
+theme: cerulean
+---
+
+## Introduction
+
+This a Quarto document. To learn more about Quarto see <https://quarto.org>.
+
+Click the **Code** button in the header to see the full source code of this document.
+
+Here we call the R `summary()` function---the function's output is included immediately below:
+
+```{r}
+summary(cars)
+```

@@ -1,0 +1,26 @@
+---
+title: "Aula 03 - Documentação"
+author: "Mikael Marin Coletto"
+format: 
+  pptx:
+    reference-doc: ../template-ppt/TemplateCidacs.pptx
+    incremental: true
+---
+
+## Documentação e manutenção de código
+
+-   Documentação no código
+
+-   Arquivos de documentação e descrição técnica
+
+-   Uso do git
+
+## Documentação no código
+
+![](images/doc-no-codigo.png)
+
+## Arquivos de documentação e descrição técnica
+
+![](images/doc-documento.png)
+
+## Uso do git
