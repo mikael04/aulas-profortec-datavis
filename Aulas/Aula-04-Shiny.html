@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="pt"><head>
 <script src="Aula-04-Shiny_files/libs/clipboard/clipboard.min.js"></script>
 <script src="Aula-04-Shiny_files/libs/quarto-html/tabby.min.js"></script>
 <script src="Aula-04-Shiny_files/libs/quarto-html/popper.min.js"></script>
@@ -10,6 +10,7 @@
   <meta name="generator" content="quarto-1.2.335">
 
   <meta name="author" content="Mikael M. Coletto">
+  <meta name="dcterms.date" content="2023-12-04">
   <title>Shiny-R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -323,7 +324,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" data-background-image="/template-ppt/img0_adj_reveal.png" class="quarto-title-block center">
   <h1 class="title">Shiny-R</h1>
 
 <div class="quarto-title-authors">
@@ -334,10 +335,10 @@ Mikael M. Coletto
 </div>
 </div>
 
-  <p class="date">4/12/23</p>
+  <p class="date">12/04/2023</p>
 </section>
 <section>
-<section id="o-que-vamos-trabalhar-hoje" class="title-slide slide level1 center">
+<section id="o-que-vamos-trabalhar-hoje" class="title-slide slide level1 center" data-background-image="/template-ppt/img1_adj_reveal.png">
 <h1>O que vamos trabalhar hoje</h1>
 <div>
 <ul>
@@ -349,13 +350,11 @@ Mikael M. Coletto
 </ul>
 </div>
 </section>
-<section id="o-que-é-o-shiny" class="slide level2">
+<section id="o-que-é-o-shiny" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
 <h2>O que é o Shiny</h2>
-<ul>
-<li>Ferramenta para criar uma história através dos dados em R.</li>
-</ul>
 <div>
 <ul>
+<li class="fragment"><p>Ferramenta para criar uma história através dos dados em R.</p></li>
 <li class="fragment"><p>Um pacote para criar visualizações interativas com R*.</p></li>
 <li class="fragment"><p>Criar aplicações numa página web, colocá-las em um relatório ou construir painéis.</p></li>
 <li class="fragment"><p>É possível adicionar funcionalidades com pacotes extras.</p></li>
@@ -388,13 +387,11 @@ Mikael M. Coletto
           display:block!important;
       }</style></aside>
 </section>
-<section id="vantagens" class="slide level2">
+<section id="vantagens" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
 <h2>Vantagens</h2>
-<ul>
-<li>Código aberto e licença gratuita*.</li>
-</ul>
 <div>
 <ul>
+<li class="fragment"><p>Código aberto e licença gratuita*.</p></li>
 <li class="fragment"><p>Utiliza como base a linguagem R.</p></li>
 <li class="fragment"><p>Comunidade ativa.</p></li>
 <li class="fragment"><p>Facilidade na criação e entrega.</p></li>
@@ -421,13 +418,11 @@ Mikael M. Coletto
           display:block!important;
       }</style></aside>
 </section>
-<section id="desvantagens" class="slide level2">
+<section id="desvantagens" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
 <h2>Desvantagens</h2>
-<ul>
-<li>Curva de aprendizado inicial.</li>
-</ul>
 <div>
 <ul>
+<li class="fragment"><p>Curva de aprendizado inicial.</p></li>
 <li class="fragment"><p>Para painéis mais complexos, pode ser necessário saber usar html/css/javascript.</p></li>
 <li class="fragment"><p>Não tão escalável.</p></li>
 <li class="fragment"><p>Pode ser lento se não for otimizado.</p></li>
@@ -453,34 +448,32 @@ Mikael M. Coletto
           display:block!important;
       }</style></aside>
 </section>
-<section id="exemplos" class="slide level2">
+<section id="exemplos" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
 <h2>Exemplos</h2>
 
 <img data-src="../imagens/shiny-exemplo-1.png" class="r-stretch quarto-figure-center"><p class="caption">Exemplo 1 de App Shiny</p></section>
-<section id="exemplos-1" class="slide level2">
+<section id="exemplos-1" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
 <h2>Exemplos</h2>
 
 <img data-src="../imagens/shiny-exemplo-2.png" class="r-stretch quarto-figure-center"><p class="caption">Exemplo 2 de App Shiny</p></section>
-<section id="exemplos-2" class="slide level2">
+<section id="exemplos-2" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
 <h2>Exemplos</h2>
 
 <img data-src="../imagens/shiny-exemplo-3.png" class="r-stretch quarto-figure-center"><p class="caption">Exemplo 3 de App Shiny</p></section>
-<section id="exemplos-3" class="slide level2">
+<section id="exemplos-3" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
 <h2>Exemplos</h2>
 
 <img data-src="../imagens/shiny-exemplo-4.png" class="r-stretch quarto-figure-center"><p class="caption">Exemplo 4 de App Shiny</p></section>
-<section id="bibliografia-e-links-úteis" class="slide level2">
+<section id="bibliografia-e-links-úteis" class="slide level2" data-background-image="/template-ppt/img1_adj_reveal.png">
 <h2>Bibliografia e links úteis</h2>
 <ul>
 <li>https://shiny.rstudio.com/</li>
 <li>https://shiny.rstudio.com/gallery/</li>
+<li>https://www.shinyapps.io</li>
 </ul>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<div class="cell">
-
-</div>
+<section id="obrigado" class="slide level2" data-background-image="/template-ppt/img2_adj_reveal.png">
+<h2>Obrigado!</h2>
 <div class="footer footer-default">
 
 </div>
@@ -696,44 +689,6 @@ Mikael M. Coletto
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -771,12 +726,12 @@ Mikael M. Coletto
         // flash "checked"
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
+        button.setAttribute("title", "Copiada");
         let tooltip;
         if (window.bootstrap) {
           button.setAttribute("data-bs-toggle", "tooltip");
           button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
+          button.setAttribute("data-bs-title", "Copiada");
           tooltip = new bootstrap.Tooltip(button, 
             { trigger: "manual", 
               customClass: "code-copy-button-tooltip",
