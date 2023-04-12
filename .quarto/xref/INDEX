@@ -22,5 +22,12 @@
   },
   "Aulas/Aula-teste.qmd": {
     "Aula-teste.html": "9c7b7053"
+  },
+  "Aulas/Aula-03-Documentacao.qmd": {
+    "Aula-03-Documentacao.pptx": "69eaa731"
+  },
+  "Aulas/Aula-04-Shiny.qmd": {
+    "Aula-04-Shiny.html": "ddd6f6bf",
+    "Aula-04-Shiny.pptx": "f78f58e4"
   }
 }

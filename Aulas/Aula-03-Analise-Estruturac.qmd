@@ -40,18 +40,33 @@ path_quarto <- "../"
 df_sinasc <- read.csv(paste0(path_quarto, "dados/dados.csv"))
 # df_sinasc <- fread(paste0(path_quarto, "dados/dados.csv"))
 
+## Número de linhas
+nrow(df_sinasc)
+
+## Número de colunas
+ncol(df_sinasc)
+
 ## Verificando nome de colunas
 colnames(df_sinasc)
+```
 
+### Verificando o tipo da variável
+```{r, tipos-de-variaveis}
+typeof(df_sinasc$QTDGESTANT)
+
+# summary(df_sinasc$QTDGESTANT)
+```
+
+```{r, id}
 ## Verificando o tipo de uma coluna
 typeof(df_sinasc$contador)
 
 ## Investigando valores da variável "contador"
-dplyr::n_distinct(df_sinasc$contador)
+n_distinct(df_sinasc$contador)
 
 ## Verificando se o identificador é único, ou seja, para cada observação existe
 ## um valor para a variável "contador" na base de dados
-dplyr::n_distinct(df_sinasc$contador) == nrow(df_sinasc)
+n_distinct(df_sinasc$contador) == nrow(df_sinasc)
 
 ## Adicionando a coluna de id
 df_sinasc <- tibble::rowid_to_column(df_sinasc, "id")
@@ -64,7 +79,7 @@ Variáveis de datas costumam ser mais difíceis de lidar, portanto vamos analisa
 
 ```{r, dtnasc}
 df_dtnasc <- df_sinasc |> 
-  dplyr::select(id, DTNASC)
+  select(id, DTNASC)
 
 # skimr::skim(dtnasc$DTNASC)
 
@@ -72,25 +87,25 @@ df_dtnasc <- df_sinasc |>
 
 ## Tentando separar apenas o ano
 # dtnasc_year <- dtnasc |> 
-#   dplyr::mutate(year = substr(DTNASC, 5, 8))
+#   mutate(year = substr(DTNASC, 5, 8))
 
 ## Na separação, descobri que existiam dois tipos de datas no banco de dados
 df_dtnasc |> 
-  dplyr::filter(stringr::str_detect(DTNASC, "-")) |> 
-  dplyr::slice_head(n = 5)
+  filter(stringr::str_detect(DTNASC, "-")) |> 
+  slice_head(n = 5)
 
 df_dtnasc |> 
-  dplyr::filter(!stringr::str_detect(DTNASC, "-")) |> 
-  dplyr::slice_head(n = 5)
+  filter(!stringr::str_detect(DTNASC, "-")) |> 
+  slice_head(n = 5)
 
 ## Separei os dois tipos pela presença do "-" e transformei cada parte em data
 df_dtnasc_year_18_19 <- df_dtnasc |> 
-  dplyr::filter(stringr::str_detect(DTNASC, "-")) |> 
-  dplyr::mutate(data_nasc = lubridate::ymd(DTNASC))
+  filter(stringr::str_detect(DTNASC, "-")) |> 
+  mutate(data_nasc = lubridate::ymd(DTNASC))
 
 df_dtnasc_year_20_22 <- df_dtnasc |> 
-  dplyr::filter(!stringr::str_detect(DTNASC, "-")) |> 
-  dplyr::mutate(data_nasc = lubridate::dmy(DTNASC))
+  filter(!stringr::str_detect(DTNASC, "-")) |> 
+  mutate(data_nasc = lubridate::dmy(DTNASC))
 
 ## E então uni os dois bancos
 df_dtnasc_year <- rbind(df_dtnasc_year_18_19, df_dtnasc_year_20_22)
@@ -111,9 +126,9 @@ median(df_dtnasc_year$data_nasc)
 
 ```{r, graf-ano}
 df_dtnasc_year_graf <- df_dtnasc_year |> 
-  dplyr::filter(data_nasc < "2022-09-01") |> 
-    dplyr::group_by(month = lubridate::floor_date(data_nasc, "month")) |> 
-    dplyr::summarize(count = n())
+  filter(data_nasc < "2022-09-01") |> 
+    group_by(month = lubridate::floor_date(data_nasc, "month")) |> 
+    summarize(count = n())
 
 ggplot(df_dtnasc_year_graf, aes(x = month, y = count)) +
   geom_line(color = "lightblue") +
@@ -137,8 +152,8 @@ ggplot(df_dtnasc_year_graf, aes(x = month, y = count)) +
 
 ```{r, idade-mae}
 df_sinasc_idademae <- df_sinasc |> 
-  dplyr::select(id, IDADEMAE) |> 
-  dplyr::filter(!is.na(IDADEMAE))
+  select(id, IDADEMAE) |> 
+  filter(!is.na(IDADEMAE))
 
 sort(unique(df_sinasc_idademae$IDADEMAE))
 
@@ -172,7 +187,7 @@ Se retirarmos alguns pontos que podemos considerar inconsistências ou problemá
 
 ```{r, removendo-inconsistencias}
 df_sinasc_idademae <- df_sinasc_idademae |> 
-  dplyr::filter(IDADEMAE >= 10 & IDADEMAE <= 60)
+  filter(IDADEMAE >= 10 & IDADEMAE <= 60)
 
 sort(unique(df_sinasc_idademae$IDADEMAE))
 ```
@@ -215,36 +230,36 @@ Agora analisaremos uma variável categórica, verificando possíveis inconsistê
 
 ```{r, racacor}
 df_sinasc_racacor <- df_sinasc |> 
-  dplyr::select(id, RACACOR)
+  select(id, RACACOR)
 
 ## Verificando valores encontrados na base
 unique(df_sinasc_racacor$RACACOR)
 
 ## Verificando quantidade de linhas não preenchidas
 df_sinasc_racacor |>
-  dplyr::filter(RACACOR == "" | is.na(RACACOR)) |> 
+  filter(RACACOR == "" | is.na(RACACOR)) |> 
   nrow()
 
 ## Caso quisesse trabalhar individualmente com elas, poderia separá-las dessa forma
 # df_sinasc_racacor_number <- df_sinasc_racacor |> 
-#   dplyr::filter(RACACOR != "" & RACACOR != " " & !is.na(RACACOR)) |>
-#   dplyr::filter(RACACOR %in% c("1", "2", "3", "4", "5"))
+#   filter(RACACOR != "" & RACACOR != " " & !is.na(RACACOR)) |>
+#   filter(RACACOR %in% c("1", "2", "3", "4", "5"))
 # 
 # df_sinasc_racacor_string <- df_sinasc_racacor |> 
-#   dplyr::filter(RACACOR != "" & RACACOR != " " & !is.na(RACACOR)) |>
-#   dplyr::filter(RACACOR %in% c("Amarela", "Branca", "Indígena", "Parda", "Preta"))
+#   filter(RACACOR != "" & RACACOR != " " & !is.na(RACACOR)) |>
+#   filter(RACACOR %in% c("Amarela", "Branca", "Indígena", "Parda", "Preta"))
 
 ## Como tenho o dicionário, e sei que: 1– Branca; 2– Preta; 3– Amarela; 4– Parda; 5– Indígena.
 ## Farei a transformação diretamente na base
 
 df_sinasc_racacor <- df_sinasc_racacor |> 
-  dplyr::filter(RACACOR != "" & !is.na(RACACOR)) |> 
-  dplyr::mutate(RACACOR = case_when(RACACOR == "1" ~ "Branca",
-                                     RACACOR == "2" ~ "Preta",
-                                     RACACOR == "3" ~ "Amarela",
-                                     RACACOR == "4" ~ "Parda",
-                                     RACACOR == "5" ~ "Indígena",
-                                     .default = RACACOR))
+filter(RACACOR != "" & !is.na(RACACOR)) |> 
+mutate(RACACOR = case_when(RACACOR == "1" ~ "Branca",
+                                   RACACOR == "2" ~ "Preta",
+                                   RACACOR == "3" ~ "Amarela",
+                                   RACACOR == "4" ~ "Parda",
+                                   RACACOR == "5" ~ "Indígena",
+                                   .default = RACACOR))
 
 ## Verificando valores únicos após transformação
 unique(df_sinasc_racacor$RACACOR)
@@ -254,8 +269,8 @@ Após as remoções de inválidos, e alterações para colocar todas as raça/co
 
 ```{r, racacor-distribuicao}
 df_sinasc_racacor_contagem <- df_sinasc_racacor |> 
-  dplyr::group_by(RACACOR) |> 
-  dplyr::summarise(contagem = n())
+  group_by(RACACOR) |> 
+  summarise(contagem = n())
 ```
 ### Visualização da variável raça/cor
 
@@ -279,10 +294,61 @@ ggplot(df_sinasc_racacor_contagem, aes(area = contagem, label = RACACOR)) +
                     size = 15) +
   theme_minimal() + 
   labs(title = "Distribuição das raça/cor das mães",
-     alt = "Gráfico treemap com propoção das raça/cor das mães",
+       alt = "Gráfico treemap com propoção das raça/cor das mães",
        subtitle = 'Mapa de árvore/proporção',
        x = "",
        y = "")
 ```
 
+
+
+## Agregando idade por raça/cor da mãe
+
+Agora vamos agregar para gerar uma visualização de raça/cor do nascido vivo por idade da mãe.
+
+```{r, idade-por-racacor}
+df_sinasc_idade_racacor <- df_sinasc |> 
+  select(id, RACACOR, IDADEMAE)|> 
+  filter(RACACOR != "" & !is.na(RACACOR)) |> 
+  mutate(RACACOR = case_when(RACACOR == "1" ~ "Branca",
+                             RACACOR == "2" ~ "Preta",
+                             RACACOR == "3" ~ "Amarela",
+                             RACACOR == "4" ~ "Parda",
+                             RACACOR == "5" ~ "Indígena",
+                             .default = RACACOR)) |> 
+  filter(IDADEMAE >= 10 & IDADEMAE <= 60) |>
+  mutate(IDADEMAE = case_when(IDADEMAE >= 10 & IDADEMAE <= 14 ~ "10-14",
+                              IDADEMAE >= 15 & IDADEMAE <= 19 ~ "15-19",
+                              IDADEMAE >= 20 & IDADEMAE <= 29 ~ "20-29",
+                              IDADEMAE >= 30 & IDADEMAE <= 39 ~ "30-39",
+                              IDADEMAE >= 40 & IDADEMAE <= 60 ~ "40-60")) |> 
+  group_by(RACACOR, IDADEMAE) |> 
+  summarise(contagem = n())
+df_sinasc_idade_racacor |> 
+  DT::datatable()
+```
+
+```{r, graf-idade-racacor}
+ggplot(df_sinasc_idade_racacor, aes(x = IDADEMAE, y = contagem, fill = RACACOR)) +
+  geom_col() +
+  theme_minimal() + 
+  labs(title = "Distribuição das raça/cor das mães",
+       alt = "Gráfico de barras com distribuição de raça/cor das mães",
+       subtitle = '',
+       x = "Idade da mãe",
+       y = "",
+       fill='Raça/cor'
+       ) + 
+  scale_fill_manual(values=c("#F5CEB9", "#F2E0D4", "#90562B", "#DAAE7F", "black"))
+
+```
+
+## Mostrando uma tabela no formato wide
+
+```{r, tabela-pivot}
+df_sinasc_idade_racacor |> 
+  pivot_wider(names_from = IDADEMAE, values_from = contagem) |> 
+  DT::datatable()
+
+```
 
