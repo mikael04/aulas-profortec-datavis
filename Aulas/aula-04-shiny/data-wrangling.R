@@ -13,7 +13,7 @@ library(tidyr)
 ## 1 - Script/Função ----
 
 ## 1.0 - Lendo dados ----
-df_sinasc <- read.csv(here::here("dados/dados.csv"))
+df_sinasc <- data.table::fread(here::here("dados/dados.csv"))
 ## Adicionando a coluna de id
 df_sinasc_ <- tibble::rowid_to_column(df_sinasc, "id")
 
@@ -52,7 +52,7 @@ unique(df_sinasc_$RACACORMAE)
 #   dplyr::select(-CODMUNRES)
 
 df_codmun <- read.csv(here::here("dados/codmun.csv")) |> 
-dplyr::select(-COD.UF, NOMEMUN = NOME) |> 
+  dplyr::select(-COD.UF, NOMEMUN = NOME) |> 
   dplyr::mutate(COD = as.integer(gsub("^(.{6}).*", "\\1", COD)))
 
 df_sinasc_ <- dplyr::inner_join(df_sinasc_, df_codmun, by = join_by(CODMUNNASC == COD))
@@ -86,12 +86,13 @@ df_sinasc_ <- dplyr::inner_join(df_sinasc_, df_dtnasc_year, by = "id")
 
 
 ## 1.2. Variáveis ----
-## escolaridade da mãe, consultas (verificar se é consultas prenatal), tprobson, qtdgestant
+## escolaridade da mãe, consultas (consultas prenatal), tprobson, qtdgestant
 
 df_sinasc_vars <- df_sinasc_ |> 
   dplyr::select(id, ESCMAE, ESCMAEAGR1, ESCMAE2010, CONSPRENAT, TPROBSON, QTDGESTANT)
 
-skimr::skim(df_sinasc_vars)
+# skimr::skim(df_sinasc_vars)
+# min(df_sinasc_vars$ESCMAE2010, na.rm = T)
 
 ### 1.2.1 Escolaridade ----
 
@@ -106,7 +107,15 @@ df_sinasc_vars |>
 
 ### 1.2.2 Consultas prenatal (consprenat) ----
 df_sinasc_vars_cons <- df_sinasc_vars |> 
-  dplyr::filter(CONSPRENAT <= 50)
+  dplyr::filter(CONSPRENAT <= 50) |> 
+  dplyr::mutate(CONSPRENAT = case_when(CONSPRENAT < 4 ~ "0-3",
+                                       CONSPRENAT < 6 ~ "4-6",
+                                       CONSPRENAT < 11 ~ "7-10",
+                                       CONSPRENAT < 16 ~ "11-15",
+                                       CONSPRENAT < 21 ~ "16-20",
+                                       CONSPRENAT < 31 ~ "21-30",
+                                       CONSPRENAT < 41 ~ "31-40",
+                                       CONSPRENAT < 51 ~ "41-50"))
 
 skimr::skim(df_sinasc_vars_cons)
 
@@ -116,7 +125,6 @@ df_sinasc_vars_tprobson <- df_sinasc_vars |>
   dplyr::filter(TPROBSON <= 10)
 
 skimr::skim(df_sinasc_vars_tprobson)
-
 
 ### 1.2.4 qtdgest (partos anteriores) ----
 df_sinasc_vars_qtdgest <- df_sinasc_vars |> 
@@ -134,7 +142,15 @@ df_sinasc_ <- df_sinasc_ |>
   dplyr::filter(ESCMAE2010 != "" & !is.na(ESCMAE2010) &
                   CONSPRENAT <= 50 &
                   TPROBSON <= 10 &
-                  QTDGESTANT <= 10)
+                  QTDGESTANT <= 10)|> 
+  dplyr::mutate(CONSPRENAT = case_when(CONSPRENAT < 4 ~ "1-3",
+                                       CONSPRENAT < 6 ~ "4-6",
+                                       CONSPRENAT < 11 ~ "7-10",
+                                       CONSPRENAT < 16 ~ "11-15",
+                                       CONSPRENAT < 21 ~ "16-20",
+                                       CONSPRENAT < 31 ~ "21-30",
+                                       CONSPRENAT < 41 ~ "31-40",
+                                       CONSPRENAT < 51 ~ "41-50"))
 
 data.table::fwrite(df_sinasc_, here::here("dados/dados_manipulados.csv"))
 

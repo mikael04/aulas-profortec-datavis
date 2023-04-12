@@ -209,7 +209,7 @@ E então partimos para a apresentação dos resultados, de forma palatável, fá
 -   Tipos mais comuns:
     -   Texto simples, Tabelas, Mapas de calor
     -   Gráficos: de pontos, de linhas, de barras e de área
--   Gráficos a serem evitados:
+    -   Gráficos a serem evitados:
     -   Gráficos de pizza e donnuts
     -   3D
     -   Segundo eixo
@@ -229,14 +229,13 @@ De pizza e donnuts -\> Nós temos dificuldade para calcular proporções e ângu
 Segundo eixo -\> Dificuldade em ter uma linha base, dificulta a leitura do gráfico como um todo
 :::
 
-## Gráfico de pontos 
+## Gráfico de pontos
 
 ![](../imagens/graph-points.png)
 
 ## Gráfico de linhas
 
 ![](../imagens/graph-line-compare.png)
-
 
 ## Gráfico de área
 
@@ -259,13 +258,7 @@ Carga cognitiva -\> Informação que cada elemento da nossa apresentação gera.
 
 Distrações -\> Elementos que não contribuem para a compreensão da mensagem
 
-Princípios de percepção:
-- Proximidade
-- Similaridade
-- Borda/fundo
-- Fechamento
-- Continuidade
-- Conexão
+Princípios de percepção: - Proximidade - Similaridade - Borda/fundo - Fechamento - Continuidade - Conexão
 
 Falta de organização -\> Alinhamento e espaços em brancos
 :::
@@ -273,7 +266,6 @@ Falta de organização -\> Alinhamento e espaços em brancos
 ## Eliminando distrações e refazendo um gráfico
 
 ![](../imagens/graph-remake-bef.jpg)
-
 
 ## Eliminando distrações e refazendo um gráfico
 
@@ -288,10 +280,8 @@ Falta de organização -\> Alinhamento e espaços em brancos
 :::
 
 ::: notes
-Atributos pré-atencionais (imagem)
-Elementos em texto -\> negrito, cor, itálico, tamanho, espaço, encapsulamento e sublinhado.
+Atributos pré-atencionais (imagem) Elementos em texto -\> negrito, cor, itálico, tamanho, espaço, encapsulamento e sublinhado.
 :::
-
 
 ## Atributos pré-atencionais
 
@@ -313,9 +303,7 @@ Forma e propósito -\> Eliminar distração, evidênciar o que é importante. Ta
 Acessibilidade -\> Facilitar compreensão, usar textos, pensar em diferentes tipos de público
 
 Estética -\> Uso de cores com sabedoria, alinhamentos, aproveitar espaço em branco.
-
 :::
-
 
 ## Conte uma história
 
@@ -334,7 +322,6 @@ Utilizar repetição
 
 Táticas para contar história (lógica horizontal, vertical, storyboard reverso)
 :::
-
 
 ## Fontes/Bibliografia
 

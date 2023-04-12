@@ -51,6 +51,7 @@ colnames(df_sinasc)
 ```
 
 ### Verificando o tipo da variável
+
 ```{r, tipos-de-variaveis}
 typeof(df_sinasc$QTDGESTANT)
 
@@ -193,6 +194,7 @@ sort(unique(df_sinasc_idademae$IDADEMAE))
 ```
 
 ### Visualização de idade da mãe
+
 ```{r, graf-idademae}
 ggplot(df_sinasc_idademae, aes(y = IDADEMAE)) +
   geom_boxplot() +
@@ -208,7 +210,6 @@ ggplot(df_sinasc_idademae, aes(y = IDADEMAE)) +
   scale_y_continuous(breaks=seq(0, 60, 10))
 ```
 
-
 #### Outra forma de analisar
 
 ```{r, histograma-idademae}
@@ -222,7 +223,6 @@ ggplot(df_sinasc_idademae, aes(x = IDADEMAE)) +
        y = "") +
   scale_x_continuous(breaks=seq(1, 60, 2))
 ```
-
 
 ## Investigando a variável raça/cor (RACACOR)
 
@@ -272,6 +272,7 @@ df_sinasc_racacor_contagem <- df_sinasc_racacor |>
   group_by(RACACOR) |> 
   summarise(contagem = n())
 ```
+
 ### Visualização da variável raça/cor
 
 ```{r, graf-racacor}
@@ -299,8 +300,6 @@ ggplot(df_sinasc_racacor_contagem, aes(area = contagem, label = RACACOR)) +
        x = "",
        y = "")
 ```
-
-
 
 ## Agregando idade por raça/cor da mãe
 
@@ -351,4 +350,3 @@ df_sinasc_idade_racacor |>
   DT::datatable()
 
 ```
-
