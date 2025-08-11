@@ -1,0 +1,244 @@
+---
+title: "Introdução à visualização de dados"
+title-slide-attributes:
+  data-background-image: /template-ppt/img0_adj_reveal.png
+author: "Mikael M. Coletto e Maria Yury Travassos Ichihara"
+date: "08-08-2025"
+format: 
+  revealjs:
+    incremental: true
+    theme: 
+    - "../css/custom.scss"
+---
+
+# O que vamos trabalhar hoje {background-image="../template-ppt/img1_adj_reveal.png"}
+
+::: incremental
+-   Apresentação dos tutores e alunos
+
+-   O que é visualização de dados e suas definições
+
+-   Um exemplo prático
+
+-   Mitos da visualização de dados
+
+-   Alguns norteadores para visualizações
+
+-   Contextualização do mercado atual
+:::
+
+::: notes
+-   Falar rapidamente sobre como vai ser estruturada a aula de hoje.
+-   Começaremos pelos conceitos e trabalharemos um exemplo prático simples de porquê usar a visualização de dados no entendimento dos dados.
+-   Falaremos também da "Era dos dados", falando do uso atual de visualização de dados
+-   E então falaremos dos pilares da visualização de dados
+:::
+
+## Contextualização do mercado atual
+
+::: incremental
+-   "A era dos dados"
+
+-   Grandes volumes de dados complexos
+
+-   Grandes desafios em:
+
+    -   Armazenamento
+
+    -   Curadoria
+
+    -   Privacidade
+
+    -   Governança
+
+-   Dificuldade em **manusear** e obter **compreensão** dos dados
+:::
+
+::: notes
+Hoje em dia não temos apenas grandes volumes de dados, mas dados complexos, que vêm de diferentes fontes, tem diferentes formatos, que costumam carregar muitas informações inúteis, etc.
+
+E esse grande volume de dados, que possibilita análises e conclusões cada vez mais precisas, vem com seus desafios, de armazenamento dessa grande quantidade de dados, de curadoria para tratar desses dados e garantir disponibilidade e reusabilidade à longo prazo, privacidade porque muitas vezes, principalmente em bases da área da saúde, esses dados são sigilosos, o que envolve muitos cuidados na hora de manusear e pensar numa visualização, a governança que se preocupa com todos esses pontos e tenta manter o fluxo contínuo e seguro.
+
+E então temos os desafios dos analistas e cientistas de dados (e até mesmo dos engenheiros), na hora de estruturar esses dados, manipular eles, ter seus primeiros insights, ideias, direções que vão tomar, etc.
+:::
+
+## O que é visualização de dados?
+
+::: incremental
+-   Representação gráfica dos dados
+
+-   Apresenta informações e dados
+
+-   Ferramenta para auxiliar a compreensão dos dados
+
+-   Usada para apresentar resultados
+:::
+
+::: notes
+Informação != de dados, dados são observações colhidas, informações são conclusões e análises que fazemos em cima dos dados.
+:::
+
+## Definições
+
+::: incremental
+-   A visualização de dados como representação e apresentação de dados que exploram nossa habilidade de percepção visual com a finalidade de aumentar a compreensão (KIRK, 2012).
+
+-   Para Friendly (2008), a visualização de dados é uma expressão contemporânea da comunicação visual que consiste na representação visual de dados.
+
+-   A visualização de dados é a exibição gráfica de informações abstratas com os propósitos de atribuição de sentido e comunicação.
+:::
+
+::: notes
+1: Percepção visual, o nosso sentido mais aguçado e trabalhado desde o início da evolução da espécie humana.
+
+2: Informações abstratas \<- tipicamente imagens ou videos, mas também escultura, aplicações web, etc.
+:::
+
+## Um exemplo prático
+
+```{r, echo=F, table}
+df_1 <- data.frame(idade = rep("15 à 20"), n_filhos = c(1, 1, 2, 0, 1))
+df_2 <- data.frame(idade = rep("20 à 30"), n_filhos = c(0, 0, 5, 0, 0))
+df_3 <- data.frame(idade = rep("30 à 40"), n_filhos = c(0, 1, 3, 0, 1))
+
+df <- rbind(df_1, df_2, df_3) |>
+  dplyr::group_by(idade) |>
+  dplyr::mutate(media = mean(n_filhos)) |>
+  dplyr::ungroup()
+
+library(gt)
+table <- df |>
+  gt::gt() |>
+  gt::cols_align(
+    align = "center",
+    columns = c(idade, n_filhos, media)
+  ) |>
+  cols_label(
+    idade = md("**Idade das mães**"),
+    n_filhos = md("**Número de filhos**"),
+    media = md("**Média**")
+  ) |>
+  gt::as_raw_html()
+
+table
+```
+
+## Um exemplo prático
+
+```{r, echo=F, graph}
+#| column: screen-inset-shaded
+#| layout-nrow: 1
+library(ggplot2)
+
+# We need to recalculate the 'media' column for the plot, as it was
+# removed during the table-making process above.
+df <- df |>
+  dplyr::group_by(idade) |>
+  dplyr::mutate(media = mean(n_filhos)) |>
+  dplyr::ungroup()
+
+p <- ggplot(df) +
+  geom_violin(aes(x = idade, y = n_filhos), linetype = 1, linewidth = 0.5) +
+  geom_hline(
+    aes(yintercept = mean(media), color = "Média"),
+    linetype = 2,
+    linewidth = 0.5
+  ) +
+  scale_colour_manual(values = c("blue")) +
+  theme_minimal() +
+  labs(
+    title = "Distribuição de número de filhos por categoria de idade",
+    x = "Idade das mães",
+    y = "Número de filhos",
+    color = NULL
+  )
+p
+```
+
+::: notes
+Aqui podemos ver muito mais claramente que a média por si só não é uma boa métrica. Nesse caso às três categorias de idade possuem a mesma média, mas distribuição bastante diferente.
+
+Apenas olhando as tabelas às vezes podemos ter dificuldade para observar tais fenômenos, nesse caso onde o número de dados era pequeno, ainda é possível, mas se imaginarmos bancos de dados com milhões de linhas, e algumas centenas de colunas, isso se torna impraticável.
+:::
+
+## Mitos de visualização de dados
+
+::: incremental
+-   Uma imagem vale mais que mil palavras
+
+-   A visualização é sempre intuitiva
+
+-   Os dados precisam falar sobre eles mesmos
+
+-   Existem regras fixas sobre como utilizar gráficos
+:::
+
+::: notes
+Em uma das palestras de Alberto Cairo ele cita que 6 entre as 7 notícias mais lidas do washington post possuem algum tipo de visualização gráfica.
+
+A visualização deve ser pensada muito bem para se tornar de fácil compreensão, devemos usar anotações se preciso, utilizar as cores de forma que façam sentido, pensar muito bem no gráfico que vai ser apresentado.
+:::
+
+## Alguns norteadores para visualizações 
+
+::: incremental
+1.  Porque minha visualização existe?
+
+2.  O que visualizar?
+
+3.  Quanto visualizar?
+
+4.  Como visualizar os dados?
+
+5.  Que estilo usar?
+:::
+
+::: notes
+1.  Quais são os benefícios, quais alternativas à ela, que outros tipos de visualizações ou apresentações, que problemas ela pode causar. Pensar no propósito, uma tabela pode ser opção melhor caso queiramos investigar todos os dados por exemplo.
+2.  Entendemos completamente as limitações, problemas, pressupostos dos nossos dados? E o nosso público? O que estamos tentando medir (e o que não está sendo medido) e porquê.
+3.  Quantos detalhes adicionamos e quandas informações retiramos?
+4.  Tipo de gráfico, tipo de mapa, qual melhor forma de organizar. Sempre escolher uma "arte funcional", precisa ser visualmente limpo, atraente e cumprir o objetivo.
+5.  Nem tudo precisa ser minimalista ou inovador.
+:::
+
+## Revisando
+
+::: incremental
+-   Mercado de trabalho atual
+
+-   O que é visualização de dados e suas definições
+
+-   Vantagens e desvantagens da visualização
+
+-   Alguns mitos da visualização
+
+-   Norteadores para construção de visualizações
+:::
+
+## Bibliografia
+
+<p class="bibliografia">
+
+Knaflic, C. N. **Storytelling com dados: um guia sobre visualização de dados para profissionais de negócios**. 2ª edição. Rio de Janeiro: Alta Books, 2019.
+
+</p>
+
+<p class="bibliografia">
+
+Kirk, A. **Data Visualization: A Successful Design Process**. Birmingham: Packt Publishing, 2012.
+
+</p>
+
+<p class="bibliografia">
+
+FRIENDLY, M. .**Milestones in the history of thematic cartography, statistical graphics, and data visualization**.Utah State University. 2008. Disponível em: <https://www.usu.edu/math/symanzik/teaching/2009_stat6560/Downloads/Friendly_milestone.pdf>. Acesso em: 09/03/23.
+
+</p>
+
+<p class="bibliografia">
+
+Few, Stephen. "Data visualization for human perception." The Encyclopedia of Human-Computer Interaction, 2nd Ed. (2013).
+
+</p>
+
+## Obrigado!

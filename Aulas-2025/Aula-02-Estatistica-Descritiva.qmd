@@ -1,0 +1,400 @@
+---
+title: "Estatística Descritiva"
+author: "Mikael M. Coletto e Maria Yury Travassos Ichihara"
+date: "08-15-2025"
+format: 
+  revealjs:
+    incremental: true
+    theme: 
+    - "../css/custom.scss"
+    embed-resources: true
+execute:
+  warning: false
+  echo: true
+---
+
+## O que vamos trabalhar hoje {background-image="../template-ppt/img1_adj_reveal.png"}
+
+::: incremental
+-   Fundamentos de Estatística Descritiva
+-   Tipos de Variáveis
+-   Medidas de Tendência Central
+-   Medidas de Dispersão
+-   Análise de Frequências
+-   Análise prática com dados do SINASC
+:::
+
+# Fundamentos de Estatística Descritiva
+
+## Lendo a base de dados
+
+```{r, bibliotecas}
+## Definindo repositório padrão
+options(
+  repos = c(CRAN = "[https://cloud.r-project.org](https://cloud.r-project.org)")
+)
+
+if (!require("Require")) {
+  install.packages("Require")
+}
+## Biblioteca "guarda-chuva" com diversas outras bibliotecas que auxiliam na manipulação e estruturação da base de dados
+Require::Require(c("tidyverse"), require = TRUE)
+# ## Biblioteca usada para manipulação de dados
+Require::Require(c("dplyr"), require = TRUE)
+# ## Biblioteca para construção de gráficos
+Require::Require(c("ggplot2"), require = TRUE)
+# ## Biblioteca usada para manipulação de dados (não incluída, por não ter sido utilizada)
+Require::Require(c("data.table"), require = TRUE)
+## Biblioteca para gráfico do tipo treemap
+Require::Require(c("treemapify"), require = TRUE)
+
+options(scipen = 999999)
+```
+
+```{r, read-data}
+## Caminho relativo
+path_quarto <- "../"
+## Caminho do arquivo de dados
+df_sinasc <- read.csv(paste0(path_quarto, "dados/dados.csv"))
+# df_sinasc <- fread(paste0(path_quarto, "dados/dados.csv"))
+
+## Número de linhas
+nrow(df_sinasc)
+
+## Número de colunas
+ncol(df_sinasc)
+
+## Verificando nome de colunas
+colnames(df_sinasc)
+```
+
+### Verificando o tipo da variável
+
+```{r, tipos-de-variaveis}
+typeof(df_sinasc$QTDGESTANT)
+
+# summary(df_sinasc$QTDGESTANT)
+```
+
+```{r, id}
+## Verificando o tipo de uma coluna
+typeof(df_sinasc$contador)
+
+## Investigando valores da variável "contador"
+n_distinct(df_sinasc$contador)
+
+## Verificando se o identificador é único, ou seja, para cada observação existe
+## um valor para a variável "contador" na base de dados
+n_distinct(df_sinasc$contador) == nrow(df_sinasc)
+
+## Adicionando a coluna de id
+df_sinasc <- tibble::rowid_to_column(df_sinasc, "id")
+
+```
+
+## Investigando variável de data de nascimento (DTNASC)
+
+Variáveis de datas costumam ser mais difíceis de lidar, portanto vamos analisar uma delas que tem bom preenchimento na base de dados.
+
+```{r, dtnasc}
+df_dtnasc <- df_sinasc |>
+  select(id, DTNASC)
+
+# skimr::skim(dtnasc$DTNASC)
+
+## Tentando separar apenas o ano
+# dtnasc_year <- dtnasc |>
+#   mutate(year = substr(DTNASC, 5, 8))
+
+## Na separação, descobri que existiam dois tipos de datas no banco de dados
+df_dtnasc |>
+  filter(stringr::str_detect(DTNASC, "-")) |>
+  slice_head(n = 5)
+
+df_dtnasc |>
+  filter(!stringr::str_detect(DTNASC, "-")) |>
+  slice_head(n = 5)
+
+## Separei os dois tipos pela presença do "-" e transformei cada parte em data
+df_dtnasc_year_18_19 <- df_dtnasc |>
+  filter(stringr::str_detect(DTNASC, "-")) |>
+  mutate(data_nasc = lubridate::ymd(DTNASC))
+
+df_dtnasc_year_20_22 <- df_dtnasc |>
+  filter(!stringr::str_detect(DTNASC, "-")) |>
+  mutate(data_nasc = lubridate::dmy(DTNASC))
+
+## E então uni os dois bancos
+df_dtnasc_year <- rbind(df_dtnasc_year_18_19, df_dtnasc_year_20_22)
+
+rm(df_dtnasc_year_18_19, df_dtnasc_year_20_22)
+
+## Menor data encontrada (mais antiga)
+min(df_dtnasc_year$data_nasc)
+## Maior data encontrada (mais nova)
+max(df_dtnasc_year$data_nasc)
+## Mediana das data encontrada (a posição central)
+median(df_dtnasc_year$data_nasc)
+
+# skimr::skim(dtnasc_year$data_nasc)
+```
+
+### Visualização de registros por ano
+
+```{r, graf-ano}
+df_dtnasc_year_graf <- df_dtnasc_year |>
+  filter(data_nasc < "2022-09-01") |>
+  group_by(month = lubridate::floor_date(data_nasc, "month")) |>
+  summarize(count = n())
+
+ggplot(df_dtnasc_year_graf, aes(x = month, y = count)) +
+  geom_line(color = "lightblue") +
+  theme_minimal() +
+  labs(
+    title = "Nascimentos de 01/2018 à 08/2022",
+    alt = "Gráfico de linhas para nascimentos de 2018 à 08/2022",
+    x = "",
+    y = ""
+  ) +
+  scale_x_date(
+    limits = as.Date(c("2018-01-01", "2022-08-31")),
+    date_breaks = "6 months",
+    date_labels = "%m/%Y",
+    expand = c(0, 0)
+  )
+
+```
+
+## Investigando variável de idade da mãe (IDADEMAE)
+
+É uma variável bastante interessante, do tipo numérica e discreta.
+
+```{r, idade-mae}
+df_sinasc_idademae <- df_sinasc |>
+  select(id, IDADEMAE) |>
+  filter(!is.na(IDADEMAE))
+
+sort(unique(df_sinasc_idademae$IDADEMAE))
+
+## Menor data encontrada (mais antiga)
+min(df_sinasc_idademae$IDADEMAE, na.rm = T)
+## Maior data encontrada (mais nova)
+max(df_sinasc_idademae$IDADEMAE, na.rm = T)
+## Mediana das data encontrada (a posição central)
+median(df_sinasc_idademae$IDADEMAE, na.rm = T)
+## Verificando por quartis
+quantile(
+  df_sinasc_idademae$IDADEMAE,
+  na.rm = T,
+  probs = c(0, 0.25, 0.5, 0.75, 1)
+)
+
+# skimr::skim(df_sinasc_idademae$IDADEMAE)
+ggplot(df_sinasc_idademae, aes(y = IDADEMAE)) +
+  geom_boxplot() +
+  xlim(-1, 1) +
+  theme_minimal() +
+  labs(
+    title = "Distribuição das idades das mães",
+    alt = "Gráfico boxplot com idade das mães",
+    x = "",
+    y = ""
+  ) +
+  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
+  scale_y_continuous(breaks = seq(0, 60, 10))
+
+```
+
+Podemos ver no gráfico, que temos algumas idades aparentemente discrepantes (mostradas pelos pontos).
+
+Se retirarmos alguns pontos que podemos considerar inconsistências ou problemáticos, teríamos um gráfico mais consistente.
+
+```{r, removendo-inconsistencias}
+df_sinasc_idademae <- df_sinasc_idademae |>
+  filter(IDADEMAE >= 10 & IDADEMAE <= 60)
+
+sort(unique(df_sinasc_idademae$IDADEMAE))
+```
+
+### Visualização de idade da mãe
+
+```{r, graf-idademae}
+ggplot(df_sinasc_idademae, aes(y = IDADEMAE)) +
+  geom_boxplot() +
+  xlim(-1, 1) +
+  theme_minimal() +
+  labs(
+    title = "Distribuição das idades das mães",
+    alt = "Gráfico boxplot com idade das mães após remoção de outliers",
+    subtitle = 'Removido "Outliers"',
+    x = "",
+    y = ""
+  ) +
+  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
+  scale_y_continuous(breaks = seq(0, 60, 10))
+```
+
+#### Outra forma de analisar
+
+```{r, histograma-idademae}
+ggplot(df_sinasc_idademae, aes(x = IDADEMAE)) +
+  geom_histogram(binwidth = 2, fill = "lightblue") +
+  theme_minimal() +
+  labs(
+    title = "Histograma das idades das mães",
+    subtitle = 'Tamanho do agrupamento: 2 anos',
+    alt = "Histograma com idade das mães",
+    x = "",
+    y = ""
+  ) +
+  scale_x_continuous(breaks = seq(1, 60, 2))
+```
+
+## Investigando a variável raça/cor (RACACOR)
+
+Agora analisaremos uma variável categórica, verificando possíveis inconsistências no preenchimento dela.
+
+```{r, racacor}
+df_sinasc_racacor <- df_sinasc |>
+  select(id, RACACOR)
+
+## Verificando valores encontrados na base
+unique(df_sinasc_racacor$RACACOR)
+
+## Verificando quantidade de linhas não preenchidas
+df_sinasc_racacor |>
+  filter(RACACOR == "" | is.na(RACACOR)) |>
+  nrow()
+
+## Caso quisesse trabalhar individualmente com elas, poderia separá-las dessa forma
+# df_sinasc_racacor_number <- df_sinasc_racacor |>
+#   filter(RACACOR != "" & RACACOR != " " & !is.na(RACACOR)) |>
+#   filter(RACACOR %in% c("1", "2", "3", "4", "5"))
+#
+# df_sinasc_racacor_string <- df_sinasc_racacor |>
+#   filter(RACACOR != "" & RACACOR != " " & !is.na(RACACOR)) |>
+#   filter(RACACOR %in% c("Amarela", "Branca", "Indígena", "Parda", "Preta"))
+
+## Como tenho o dicionário, e sei que: 1– Branca; 2– Preta; 3– Amarela; 4– Parda; 5– Indígena.
+## Farei a transformação diretamente na base
+
+df_sinasc_racacor <- df_sinasc_racacor |>
+  filter(RACACOR != "" & !is.na(RACACOR)) |>
+  mutate(
+    RACACOR = case_when(
+      RACACOR == "1" ~ "Branca",
+      RACACOR == "2" ~ "Preta",
+      RACACOR == "3" ~ "Amarela",
+      RACACOR == "4" ~ "Parda",
+      RACACOR == "5" ~ "Indígena",
+      .default = RACACOR
+    )
+  )
+
+## Verificando valores únicos após transformação
+unique(df_sinasc_racacor$RACACOR)
+```
+
+Após as remoções de inválidos, e alterações para colocar todas as raça/cor existentes na base no mesmo padrão, podemos utilizar a visualização e/ou tabelas para verificar a distribuição dessa variável.
+
+```{r, racacor-distribuicao}
+df_sinasc_racacor_contagem <- df_sinasc_racacor |>
+  group_by(RACACOR) |>
+  summarise(contagem = n())
+```
+
+### Visualização da variável raça/cor
+
+```{r, graf-racacor}
+ggplot(df_sinasc_racacor_contagem, aes(x = RACACOR, y = contagem)) +
+  geom_col(fill = "lightblue") +
+  theme_minimal() +
+  labs(
+    title = "Distribuição das raça/cor das mães",
+    alt = "Gráfico de barras com distribuição de raça/cor das mães",
+    subtitle = '',
+    x = "",
+    y = ""
+  )
+```
+
+```{r, graf-racacor-treemap}
+library(treemapify)
+ggplot(df_sinasc_racacor_contagem, aes(area = contagem, label = RACACOR)) +
+  treemapify::geom_treemap(fill = "lightblue") +
+  geom_treemap_text(colour = "black", place = "centre", size = 15) +
+  theme_minimal() +
+  labs(
+    title = "Distribuição das raça/cor das mães",
+    alt = "Gráfico treemap com propoção das raça/cor das mães",
+    subtitle = 'Mapa de árvore/proporção',
+    x = "",
+    y = ""
+  )
+```
+
+## Agregando idade por raça/cor da mãe
+
+Agora vamos agregar para gerar uma visualização de raça/cor do nascido vivo por idade da mãe.
+
+```{r, idade-por-racacor}
+df_sinasc_idade_racacor <- df_sinasc |>
+  select(id, RACACOR, IDADEMAE) |>
+  filter(RACACOR != "" & !is.na(RACACOR)) |>
+  mutate(
+    RACACOR = case_when(
+      RACACOR == "1" ~ "Branca",
+      RACACOR == "2" ~ "Preta",
+      RACACOR == "3" ~ "Amarela",
+      RACACOR == "4" ~ "Parda",
+      RACACOR == "5" ~ "Indígena",
+      .default = RACACOR
+    )
+  ) |>
+  filter(IDADEMAE >= 10 & IDADEMAE <= 60) |>
+  mutate(
+    IDADEMAE = case_when(
+      IDADEMAE >= 10 & IDADEMAE <= 14 ~ "10-14",
+      IDADEMAE >= 15 & IDADEMAE <= 19 ~ "15-19",
+      IDADEMAE >= 20 & IDADEMAE <= 29 ~ "20-29",
+      IDADEMAE >= 30 & IDADEMAE <= 39 ~ "30-39",
+      IDADEMAE >= 40 & IDADEMAE <= 60 ~ "40-60"
+    )
+  ) |>
+  group_by(RACACOR, IDADEMAE) |>
+  summarise(contagem = n())
+df_sinasc_idade_racacor |>
+  gt::gt()
+```
+
+```{r, graf-idade-racacor}
+ggplot(
+  df_sinasc_idade_racacor,
+  aes(x = IDADEMAE, y = contagem, fill = RACACOR)
+) +
+  geom_col() +
+  theme_minimal() +
+  labs(
+    title = "Distribuição das raça/cor das mães",
+    alt = "Gráfico de barras com distribuição de raça/cor das mães",
+    subtitle = '',
+    x = "Idade da mãe",
+    y = "",
+    fill = 'Raça/cor'
+  ) +
+  scale_fill_manual(
+    values = c("#F5CEB9", "#F2E0D4", "#90562B", "#DAAE7F", "black")
+  )
+
+```
+
+## Mostrando uma tabela no formato wide
+
+```{r, tabela-pivot}
+df_sinasc_idade_racacor |>
+  pivot_wider(names_from = IDADEMAE, values_from = contagem) |>
+  gt::gt()
+
+```
+
+## Obrigado!

@@ -1,0 +1,124 @@
+---
+title: "Shiny-R"
+title-slide-attributes:
+  data-background-image: /template-ppt/img0_adj_reveal.png
+author: "Mikael M. Coletto"
+date: "04-12-2023"
+format: 
+  revealjs:
+    theme: 
+    - "../css/custom.scss"
+---
+
+# O que vamos trabalhar hoje {background-image="/template-ppt/img1_adj_reveal.png"}
+
+::: incremental
+-   O que é o Shiny
+
+-   Vantagens e desvantagens
+
+-   Exemplo de uso
+
+-   Manipulação inicial da base de dados
+
+-   Estruturação da base de dados
+:::
+
+## O que é o Shiny
+
+::: incremental
+-   Ferramenta para criar uma história através dos dados em R.
+
+-   Um pacote para criar visualizações interativas com R\*.
+
+-   Criar aplicações numa página web, colocá-las em um relatório ou construir painéis.
+
+-   É possível adicionar funcionalidades com pacotes extras.
+
+-   Código aberto e licença gratuita.
+:::
+
+::: notes
+1.  Foi anunciado em 2012, com a ideia de gerar protótipos utilizando a análise, exploração e visualização de dados.
+
+2.  Combina a análise de dados e a apresentação de dados, pensado para ser um painel interativo. Ele toma emprestado alguns conceitos de servidor e cliente de aplicações web, mas unindo tudo em um único produto. Utiliza ferramentas de desenvolvimento web (css, html e javascript) para criar páginas web.
+
+Explicar o conceito de cliente e servidor.
+
+3.  Pode ser usada também para visualização de relatórios interativos.
+
+\*Está sendo desenvolvido para Python.
+
+4.  Pacotes que adicionam funcionalidades em widgets como htmlwidgets, temas e ações em javascript.
+
+5.  É um software de código aberto, signfica que qualquer um pode visualizar como o programa foi feito, e se quiser modificar ele. Por ter sua licença livre para uso e comercializiação, pode ser usado para criar produtos.
+:::
+
+## Vantagens
+
+::: incremental
+-   Código aberto e licença gratuita\*.
+
+-   Utiliza como base a linguagem R.
+
+-   Comunidade ativa.
+
+-   Facilidade na criação e entrega.
+
+-   Complexidade média.
+:::
+
+::: notes
+1.  Apesar de ser gratuito, existem versões pagas que facilitam o desenvolvimento (a empresa que gere o RStudio vende licenças para uso comercial, facilitando o processo de desenvolvimento de aplicações e hospedando elas).
+2.  O analista ou cientista de dados que já trabalha com R para fazer suas análises e modelos, vai ter familiaridade com a linguagem, pode então utilizar esses conhecimentos (ou pelo menos parte deles) para a construção da aplicação.
+3.  A comunidade de usuários do R é bastante ativa e existem empresas que desenvolvem e mantem pacotes (também chamadas de bibliotecas), por ser um software livre acaba tendo mais usuários e mais pessoas contribuindo do que as versões de softwares pagos (como o tableau e o powerBI).
+4.  A entrega (chamada de deploy) é razoavelmente facilitada para um projeto pequeno, e pode ser facilitada utilizando a plataforma da própria desenvolvedora do Shiny, mas assim de forma paga.
+5.  Apesar de não ser tão intuitivo, existem muitos exemplos e tutoriais para serem seguidos, e o próprio shiny lida com várias questões de responsividade e reatividade de forma mais simples.
+:::
+
+## Desvantagens
+
+::: incremental
+-   Curva de aprendizado inicial.
+
+-   Para painéis mais complexos, pode ser necessário saber usar html/css/javascript.
+
+-   Não tão escalável.
+
+-   Pode ser lento se não for otimizado.
+
+-   Exige um servidor para rodar.
+:::
+
+::: notes
+1 e 2. Para quem não tem noção de R pode ser um pouco complicado (assim como o aprendizado de qualquer outra linguagem). O mínimo de conhecimento de CSS, js e html também é útil.
+
+3.  Para uma aplicação que vai ser muito acessada por um público, exige mais conhecimentos de back-end e de gerenciamento de máquinas (docker por exemplo). Existem tutoriais mas não existe nada tão intuitivo.
+
+4.  Pode exigir mais memória caso use muitos dados ou manipule muitos dados no uso da aplicação.
+
+5.  A aplicação roda em uma máquina que será o servidor, e pode atender a vários clientes (usuários), então precisará de no mínimo uma máquina que consiga rodar a aplicação de forma satisfatória.
+:::
+
+## Exemplos
+
+[![Exemplo 1 de App Shiny](../imagens/shiny-exemplo-1.png)](https://phillyo.shinyapps.io/intelligentsia/)
+
+## Exemplos
+
+[![Exemplo 2 de App Shiny](../imagens/shiny-exemplo-2.png)](https://gallery.shinyapps.io/freedom-press-index/#home)
+
+## Exemplos
+
+[![Exemplo 3 de App Shiny](../imagens/shiny-exemplo-3.png)](https://danielrivera1.shinyapps.io/Regression2/)
+
+## Exemplos
+
+[![Exemplo 4 de App Shiny](../imagens/shiny-exemplo-4.png)](https://danielrivera1.shinyapps.io/Regression2/)
+
+## Bibliografia e links úteis
+
+-   https://shiny.rstudio.com/
+-   https://shiny.rstudio.com/gallery/
+
+## Obrigado! {background-image="/template-ppt/img2_adj_reveal.png"}

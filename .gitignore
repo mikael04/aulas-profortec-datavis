@@ -5,3 +5,21 @@
 /.quarto/
 dados
 Aulas/Aula-04-Shiny_files/*
+*.js
+*.css
+*.html
+*.eot
+*.ttf
+*.woff
+*.js.map
+.quarto/*
+## Aulas 2023
+Aulas-2023/Aula-01-Intro-Vis_files/*
+Aulas-2023/Aula-02-Proj-Vis-Dados_files/*
+Aulas-2023/Aula-04-Shiny_files/*
+Aulas-2023/Aula-04-Shiny-html_files/*
+## Aulas 2025
+Aulas-2025/Aula-02-Estatistica-Descritiva_cache/*
+Aulas-2025/Aula-02-Estatistica-Descritiva_files/*
+Aulas-2025/_output/*
+Aulas-2025/_freeze/*

@@ -11,21 +11,22 @@ $h2-color: #761514;
 $h1-title-color: #761514;
 
 /*-- scss:rules --*/
-.bibliografia{
+.bibliografia {
   font-size: 20px;
 }
 
 /* Posição do "obrigado no slide final"*/
-#obrigado{
+#obrigado {
   position: fixed;
   top: 180px;
 }
 
 /* Capa */
 /* Cor do título (capa) */
-.reveal #title-slide{
+.reveal #title-slide {
   text-align: left;
 }
+
 /* Título */
 .reveal h1 {
   color: $h1-title-color;
@@ -33,7 +34,7 @@ $h1-title-color: #761514;
 }
 
 /* Autores */
-.reveal .quarto-title-authors{
+.reveal .quarto-title-authors {
   color: gray;
   font-size: 32px;
   display: inherit !important;
@@ -43,4 +44,10 @@ $h1-title-color: #761514;
 /* Títulos dos slides seguintes */
 .reveal section h2 {
   color: $h2-color;
+}
+
+/* Ajustando tamanho de conteúdo (para diminuir "padding") */
+.slides {
+  width: 1350px !important;
+  margin-top: -4px !important;
 }
