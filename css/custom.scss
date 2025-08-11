@@ -40,6 +40,12 @@ $h1-title-color: #761514;
   display: inherit !important;
 }
 
+/* Texto justificado */
+.reveal .slides section p,
+.reveal .slides section li {
+  text-align: justify;
+}
+
 
 /* Títulos dos slides seguintes */
 .reveal section h2 {
@@ -50,4 +56,13 @@ $h1-title-color: #761514;
 .slides {
   width: 1350px !important;
   margin-top: -4px !important;
+}
+
+// Small font class for slide sections
+.small-font {
+  font-size: 0.8em;
+}
+
+.nano-font {
+  font-size: 0.6em;
 }

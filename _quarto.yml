@@ -1,5 +1,19 @@
+# File: Aulas-2025/_quarto.yml
 project:
-  title: "aulas-profortec-vis-dados"
+  type: default
+  output-dir: _output
 
-editor: visual
+# Shared settings for all documents in this folder
+format:
+  revealjs:
+    theme: [default, ../css/custom.scss]
+    slide-number: true
+    show-slide-number: all
+    chalkboard: true
+
+metadata:
+  author: "Mikael Marin Coletto"
+  date: "today"
+
+editor: source
 
