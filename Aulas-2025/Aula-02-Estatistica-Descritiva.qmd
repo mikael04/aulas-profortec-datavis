@@ -30,7 +30,7 @@ execute:
 
 A estatística descritiva é o ramo da estatística que visa sumarizar e descrever as principais características de um conjunto de dados. Ela não faz inferências ou previsões sobre uma população maior, mas sim organiza e apresenta os dados de forma informativa.
 
-## 1. População e Amostra {background-image="../template-ppt/img1_adj_reveal.png"}
+## 1. População e Amostra {class="small-font" background-image="../template-ppt/img1_adj_reveal.png"}
 
 * **População:** É o conjunto completo de todos os indivíduos, objetos ou eventos que queremos estudar e sobre os quais desejamos tirar conclusões. Em saúde pública, uma população pode ser "todos os habitantes de Santa Maria-RS" ou "todos os casos de dengue notificados no Brasil em 2024".
 * **Amostra:** É um subconjunto representativo da população. Como geralmente é inviável ou muito caro estudar toda a população, selecionamos uma amostra para análise. As conclusões obtidas a partir da amostra são então generalizadas (com um certo grau de incerteza) para a população. A qualidade da amostra é crucial para a validade do estudo.

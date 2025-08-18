@@ -3,15 +3,18 @@ title: "Estatística Descritiva Scripts"
 author: "Mikael M. Coletto"
 date: "08-15-2025"
 lang: pt-BR
+theme: cerulean
+execute:
+  warning: false
+  echo: true
+toc: true
+code-fold: true
 title-slide-attributes:
   data-background-image: /template-ppt/img0_adj_reveal.png
 format:
     html:
-        embed-resources: true
-execute:
-  warning: false
-  echo: true
-  cache: true
+      embed-resources: true
+      self-contained: true
 ---
 
 ## Pacotes utilizados
@@ -140,29 +143,16 @@ df_dtnasc_year_graf <- df_dtnasc_year |>
   summarize(count = n())
 
 ggplot(df_dtnasc_year_graf, aes(x = month, y = count)) +
-  geom_line(color = "lightblue") +
-  theme_minimal() +
-  labs(
-    title = "Nascimentos de 01/2018 à 08/2022",
-    alt = "Gráfico de linhas para nascimentos de 2018 à 08/2022",
-    x = "",
-    y = ""
-  ) +
-  scale_x_date(
-    limits = as.Date(c("2018-01-01", "2022-08-31")),
-    date_breaks = "6 months",
-    date_labels = "%m/%Y",
-    expand = c(0, 0)
-  )
+  geom_line()
 
-```
-
-## Investigando variável de idade da mãe (IDADEMAE) {background-image="../template-ppt/img1_adj_reveal.png"}
-
-É uma variável bastante interessante, do tipo numérica e discreta.
-
-```{r, idade-mae}
-df_sinasc_idademae <- df_sinasc |>
+  ```
+  
+  ## Investigando variável de idade da mãe (IDADEMAE) {background-image="../template-ppt/img1_adj_reveal.png"}
+  
+  É uma variável bastante interessante, do tipo numérica e discreta.
+  
+  ```{r, idade-mae}
+  df_sinasc_idademae <- df_sinasc |>
   select(id, IDADEMAE) |>
   filter(!is.na(IDADEMAE))
 
@@ -211,12 +201,15 @@ sort(unique(df_sinasc_idademae$IDADEMAE))
 ### Visualização de idade da mãe {background-image="../template-ppt/img1_adj_reveal.png"}
 
 ```{r, graf-idademae}
-ggplot(df_sinasc_idademae, aes(y = IDADEMAE)) +
+library(patchwork)
+# library(ggplot2)
+
+# Boxplot
+p_boxplot <- ggplot(df_sinasc_idademae, aes(x = "", y = IDADEMAE)) +
   geom_boxplot() +
-  xlim(-1, 1) +
   theme_minimal() +
   labs(
-    title = "Distribuição das idades das mães",
+    title = "Boxplot: Distribuição das idades das mães",
     alt = "Gráfico boxplot com idade das mães após remoção de outliers",
     subtitle = 'Removido "Outliers"',
     x = "",
@@ -224,6 +217,29 @@ ggplot(df_sinasc_idademae, aes(y = IDADEMAE)) +
   ) +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
   scale_y_continuous(breaks = seq(0, 60, 10))
+
+# Violin plot
+p_violin <- ggplot(df_sinasc_idademae, aes(x = "", y = IDADEMAE)) +
+  geom_violin(
+    fill = "lightblue",
+    alpha = 0.7,
+    adjust = 1.5,
+    trim = TRUE
+  ) +
+  geom_boxplot(width = 0.1, fill = "white", alpha = 0.8) +
+  theme_minimal() +
+  labs(
+    title = "Violin plot: Distribuição das idades das mães",
+    alt = "Gráfico violin plot com idade das mães após remoção de outliers",
+    subtitle = 'Removido "Outliers"',
+    x = "",
+    y = ""
+  ) +
+  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
+  scale_y_continuous(breaks = seq(0, 60, 10))
+
+# Combinando os gráficos lado a lado
+p_boxplot + p_violin
 ```
 
 #### Outra forma de analisar {background-image="../template-ppt/img1_adj_reveal.png"}
@@ -354,7 +370,7 @@ df_sinasc_idade_racacor <- df_sinasc |>
     )
   ) |>
   group_by(RACACOR, IDADEMAE) |>
-  summarise(contagem = n())
+  summarise(Contagem = n())
 df_sinasc_idade_racacor |>
   gt::gt()
 ```
@@ -362,7 +378,7 @@ df_sinasc_idade_racacor |>
 ```{r, graf-idade-racacor}
 ggplot(
   df_sinasc_idade_racacor,
-  aes(x = IDADEMAE, y = contagem, fill = RACACOR)
+  aes(x = IDADEMAE, y = Contagem, fill = RACACOR)
 ) +
   geom_col() +
   theme_minimal() +
@@ -384,7 +400,7 @@ ggplot(
 
 ```{r, tabela-pivot}
 df_sinasc_idade_racacor |>
-  pivot_wider(names_from = IDADEMAE, values_from = contagem) |>
+  pivot_wider(names_from = IDADEMAE, values_from = Contagem) |>
   gt::gt()
 
 ```
